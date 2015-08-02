@@ -35,4 +35,7 @@
     <integer name="navigation_bar_height_max_percent">120</integer>
     <integer name="navigation_bar_width_min_percent">65</integer>
     <integer name="navigation_bar_width_max_percent">120</integer>
+
+    <!-- Dashboard Category Margin Bottom -->
+    <dimen name="dashboard_category_margin_bottom">8dip</dimen>
 </resources>
