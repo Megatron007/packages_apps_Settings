@@ -90,4 +90,7 @@
 
     <color name="external_tile_icon_tint_color">?android:attr/colorAccent</color>
 
+    <!-- Dashboard Category Title Background Color -->
+    <color name="dashboard_category_title_bg_color">@android:color/transparent</color>
+
 </resources>

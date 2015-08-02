@@ -39,4 +39,7 @@
     <dimen name="navigation_bar_30">30dp</dimen>
     <dimen name="navigation_bar_24">24dp</dimen>
     <dimen name="navigation_bar_0">0dp</dimen>
+
+    <!-- Dashboard Category Margin Bottom -->
+    <dimen name="dashboard_category_margin_bottom">8dip</dimen>
 </resources>
