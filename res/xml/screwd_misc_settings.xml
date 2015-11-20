@@ -30,6 +30,13 @@
         android:summary="@string/toast_icon_summary"
         android:defaultValue="true" />
     
+    <ListPreference
+            android:key="media_scanner_on_boot"
+            android:title="@string/media_scanner_on_boot_title"
+            android:entries="@array/media_scanner_on_boot_entries"
+            android:entryValues="@array/media_scanner_on_boot_values"
+            android:persistent="false" /> 
+
     <PreferenceScreen
            android:key="lock_clock"
            android:title="@string/lock_clock_title"
