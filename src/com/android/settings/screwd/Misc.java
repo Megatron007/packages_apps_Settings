@@ -55,32 +55,40 @@ import com.android.internal.logging.MetricsLogger;
 
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-		
+
 	private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
-		
+    private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+
 	private PreferenceScreen mLockClock;
-	
+    private ListPreference mMsob;
+
 	private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
-	
+
 	private final ArrayList<SwitchPreference> mResetSbPrefs
-            = new ArrayList<SwitchPreference>();	
+            = new ArrayList<SwitchPreference>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.screwd_misc_settings);
-		
+
 		Activity activity = getActivity();
-		
+
 		ContentResolver resolver = getActivity().getContentResolver();
 		PreferenceScreen prefSet = getPreferenceScreen();
-		
+
 		mLockClock = (PreferenceScreen) findPreference(KEY_LOCK_CLOCK);
         if (!Utils.isPackageInstalled(getActivity(), KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             prefSet.removePreference(mLockClock);
         }
+
+        mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
+        mMsob.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0)));
+        mMsob.setSummary(mMsob.getEntry());
+        mMsob.setOnPreferenceChangeListener(this);
 
     }
 
@@ -90,11 +98,21 @@ public class Misc extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		if (preference == mMsob) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.MEDIA_SCANNER_ON_BOOT,
+                    Integer.valueOf(String.valueOf(newValue)));
+
+            mMsob.setValue(String.valueOf(newValue));
+            mMsob.setSummary(mMsob.getEntry());
+            return true;
+        }
+
         return false;
     }
-	
-	
-	
+
+
+
 	public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
         new BaseSearchIndexProvider() {
         @Override
@@ -116,7 +134,7 @@ public class Misc extends SettingsPreferenceFragment implements
             return result;
         }
     };
-	
+
 	@Override
     protected int getMetricsCategory() {
        return MetricsLogger.APPLICATION;
