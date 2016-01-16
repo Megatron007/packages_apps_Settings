@@ -68,4 +68,10 @@
             android:title="@string/emergency_tone_title"
             android:summary="%s" />
 
+    <com.mrapocalypse.screwdshop.prefs.SystemSettingSwitchPreference
+        android:key="screenshot_sound"
+        android:title="@string/screenshot_sound_title"
+        android:summary="@string/screenshot_sound_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
