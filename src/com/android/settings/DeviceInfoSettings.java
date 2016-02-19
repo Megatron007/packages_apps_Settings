@@ -89,6 +89,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DEVICE_GPU = "device_gpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
+    private static final String KEY_DTC_VERSION = "dtc_version";
+    private static final String PROPERTY_DTC_VERSION = "ro.dtc.version";
 
     private static final String KEY_DEVICE_REAR_CAMERA = "device_rear_camera";
     private static final String KEY_DEVICE_FRONT_CAMERA = "device_front_camera";
@@ -160,6 +162,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 SystemProperties.get("ro.device.rear_cam", null));
         addStringPreference(KEY_DEVICE_SCREEN_RESOLUTION,
                 SystemProperties.get("ro.device.screen_res", null));
+        setValueSummary(KEY_DTC_VERSION, "ro.dtc.version");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -176,6 +179,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SAFETY_LEGAL,
                 PROPERTY_URL_SAFETYLEGAL);
+
+        // Remove DTC Clang version if not found
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_DTC_VERSION,
+                PROPERTY_DTC_VERSION);
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,
