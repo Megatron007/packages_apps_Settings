@@ -18,7 +18,13 @@
     android:title="@string/lockscreen"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
+    <PreferenceScreen
+        android:key="lock_screen_visualizer_settings"
+        android:title="@string/lock_screen_visualizer_settings_title"
+	android:summary="@string/lock_screen_visualizer_settings_summary"
+        android:fragment="com.android.settings.screwd.LockScreenVisualizerSettings" />    
+
+     <PreferenceCategory
         android:key="locksystem_category"
         android:title="@string/lockscreen_shortcuts_cat">
 
