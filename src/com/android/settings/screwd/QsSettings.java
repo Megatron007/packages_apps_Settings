@@ -43,20 +43,24 @@ public class QsSettings extends SettingsPreferenceFragment implements
 
     private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
 	private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
-	
+	private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
+    private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
+
 	private SeekBarPreferenceCham mQSShadeAlpha;
 	private SeekBarPreferenceCham mQSHeaderAlpha;
 	private ListPreference mNumColumns;
+	private ListPreference mTileAnimationStyle;
+    private ListPreference mTileAnimationDuration;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.screwd_qs_settings);
-		
+
 		final ContentResolver resolver = getActivity().getContentResolver();
 		PreferenceScreen prefSet = getPreferenceScreen();
 
-		
+
 		// QS shade alpha
         mQSShadeAlpha =
         (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
@@ -64,7 +68,7 @@ public class QsSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_TRANSPARENT_SHADE, 255);
         mQSShadeAlpha.setValue(qSShadeAlpha / 1);
         mQSShadeAlpha.setOnPreferenceChangeListener(this);
-		
+
 		// QS header alpha
         mQSHeaderAlpha =
         	(SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
@@ -72,7 +76,7 @@ public class QsSettings extends SettingsPreferenceFragment implements
         	Settings.System.QS_TRANSPARENT_HEADER, 255);
         mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
         mQSHeaderAlpha.setOnPreferenceChangeListener(this);
-		
+
 		mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
         int numColumns = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
@@ -80,6 +84,23 @@ public class QsSettings extends SettingsPreferenceFragment implements
         mNumColumns.setValue(String.valueOf(numColumns));
         updateNumColumnsSummary(numColumns);
         mNumColumns.setOnPreferenceChangeListener(this);
+
+		mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
+        int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.ANIM_TILE_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        mTileAnimationStyle.setValue(String.valueOf(tileAnimationStyle));
+        updateTileAnimationStyleSummary(tileAnimationStyle);
+        updateAnimTileDuration(tileAnimationStyle);
+        mTileAnimationStyle.setOnPreferenceChangeListener(this);
+
+        mTileAnimationDuration = (ListPreference) findPreference(PREF_TILE_ANIM_DURATION);
+        int tileAnimationDuration = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.ANIM_TILE_DURATION, 2000,
+                UserHandle.USER_CURRENT);
+        mTileAnimationDuration.setValue(String.valueOf(tileAnimationDuration));
+        updateTileAnimationDurationSummary(tileAnimationDuration);
+        mTileAnimationDuration.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -87,7 +108,7 @@ public class QsSettings extends SettingsPreferenceFragment implements
         super.onResume();
 
     }
-	
+
 	public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getContentResolver();
 		if (preference == mQSShadeAlpha) {
@@ -105,15 +126,50 @@ public class QsSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_NUM_TILE_COLUMNS,
                     numColumns, UserHandle.USER_CURRENT);
             updateNumColumnsSummary(numColumns);
-            return true;			
+            return true;
+		} else if (preference == mTileAnimationStyle) {
+            int tileAnimationStyle = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_STYLE,
+                    tileAnimationStyle, UserHandle.USER_CURRENT);
+            updateTileAnimationStyleSummary(tileAnimationStyle);
+            updateAnimTileDuration(tileAnimationStyle);
+            return true;
+        } else if (preference == mTileAnimationDuration) {
+            int tileAnimationDuration = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_DURATION,
+                    tileAnimationDuration, UserHandle.USER_CURRENT);
+            updateTileAnimationDurationSummary(tileAnimationDuration);
+            return true;
         }
 		return false;
     }
-	
+
 	private void updateNumColumnsSummary(int numColumns) {
         String prefix = (String) mNumColumns.getEntries()[mNumColumns.findIndexOfValue(String
                 .valueOf(numColumns))];
         mNumColumns.setSummary(getActivity().getResources().getString(R.string.qs_num_columns_showing, prefix));
+    }
+
+	private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
+        String prefix = (String) mTileAnimationStyle.getEntries()[mTileAnimationStyle.findIndexOfValue(String
+                .valueOf(tileAnimationStyle))];
+        mTileAnimationStyle.setSummary(getResources().getString(R.string.qs_set_animation_style, prefix));
+    }
+
+    private void updateTileAnimationDurationSummary(int tileAnimationDuration) {
+        String prefix = (String) mTileAnimationDuration.getEntries()[mTileAnimationDuration.findIndexOfValue(String
+                .valueOf(tileAnimationDuration))];
+        mTileAnimationDuration.setSummary(getResources().getString(R.string.qs_set_animation_duration, prefix));
+    }
+
+    private void updateAnimTileDuration(int tileAnimationStyle) {
+        if (mTileAnimationDuration != null) {
+            if (tileAnimationStyle == 0) {
+                mTileAnimationDuration.setSelectable(false);
+            } else {
+                mTileAnimationDuration.setSelectable(true);
+            }
+        }
     }
 
     private int getDefaultNumColums() {
@@ -128,7 +184,7 @@ public class QsSettings extends SettingsPreferenceFragment implements
             return 3;
         }
     }
-    
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.SCREWD_SETTINGS;
