@@ -49,7 +49,7 @@
         android:title="@string/advanced_reboot_oneclick"
         android:summary="@string/advanced_reboot_oneclick_summary"
         android:dependency="reboot"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <SwitchPreference
         android:key="screenshot"
