@@ -17,52 +17,112 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <SwitchPreference
-        android:key="navbar_visibility"
-        android:title="@string/navbar_visibility" />
-
+    
     <PreferenceCategory
-        android:key="category_navbar_interface"
-        android:title="@string/navbar_interface_title" >
+        android:key="navbar_cat"
+        android:title="@string/interface_navbar_cat" >
 
-        <ListPreference
-            android:entries="@array/systemui_navbar_mode_entries"
-            android:entryValues="@array/systemui_navbar_mode_values"
-            android:key="navbar_mode"
-            android:title="@string/navbar_mode" />
+        <SwitchPreference
+    	    android:key="enable_nav_bar"
+            android:title="@string/navbar_enable_bar"
+    	    android:summary="@string/navbar_enable_bar_summary" />
+	
+	<PreferenceScreen
+                    android:key="navbar_button_settings"
+                    android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+                    android:title="@string/navbar_button_title">
+                <extra android:name="actionMode" android:value="0" />
+                <extra android:name="maxAllowedButtons" android:value="5" />
+                <extra android:name="disableDeleteLastEntry" android:value="true" />
+                <extra android:name="fragment" android:value="com.android.settings.screwd.NavbarButtonFragment" />
+        </PreferenceScreen>
 
         <PreferenceScreen
-            android:key="smartbar_settings"
-            android:title="@string/smartbar_settings_title"
-            android:fragment="com.android.settings.screwd.SmartbarSettings" />
+             android:key="navbar_style_dimen_settings"
+             android:fragment="com.android.settings.screwd.NavbarStyleDimenSettings"
+             android:title="@string/navbar_style_dimen_title" />
+	
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+    	android:key="advanced_cat"
+        android:title="@string/advanced_settings">
 
-        <PreferenceScreen
-            android:key="fling_settings"
-            android:title="@string/fling_settings"
-            android:fragment="com.android.settings.screwd.FlingSettings" />
+            <SwitchPreference
+                android:key="status_bar_ime_arrows"
+        	android:title="@string/show_ime_arrows_title"
+        	android:summary="@string/show_ime_arrows_summary"
+        	android:persistent="false" />
+	    
+	    <com.android.settings.screwd.SystemSettingSwitchPreference
+            	android:key="double_tap_sleep_navbar"
+            	android:title="@string/double_tap_sleep_nav_bar_title"
+            	android:summary="@string/double_tap_sleep_nav_bar_summary"
+            	android:defaultValue="false" />
+	    
+	    <ListPreference
+                    android:key="pref_navbar_menu_display"
+                    android:entries="@array/pref_menu_display_entries"
+                    android:entryValues="@array/pref_menu_display_values"
+                    android:title="@string/title_pref_menu_display"
+                    android:summary="@string/summary_pref_menu_display" />
+
+            <ListPreference
+                    android:key="pref_navbar_menu_location"
+                    android:entries="@array/pref_navigation_menu_entries"
+                    android:entryValues="@array/pref_navigation_menu_values"
+                    android:title="@string/title_pref_menu_location"
+                    android:summary="@string/summary_pref_menu_location" />
+
+            <SwitchPreference
+                    android:key="navbar_can_move"
+                    android:title="@string/navbar_can_move"
+                    android:summary="@string/navbar_can_move_summary" />
 
     </PreferenceCategory>
     
     <PreferenceCategory
-        android:key="category_navbar_general"
-        android:title="@string/navbar_general_title" >
+        android:key="slimdim"
+        android:title="@string/navbar_slimdim_cat" >
+	
+    	 <SwitchPreference
+            android:key="dim_nav_buttons"
+            android:title="@string/dim_nav_buttons_title"
+            android:dependency="enable_nav_bar"
+            android:summary="@string/dim_nav_buttons_summary" />
 
-	 <PreferenceScreen
-            android:key="pulse_settings"
-            android:title="@string/pulse_settings"
-            android:fragment="com.android.settings.screwd.PulseSettings" />   
+        <SwitchPreference
+            android:key="dim_nav_buttons_touch_anywhere"
+            android:dependency="dim_nav_buttons"
+            android:title="@string/dim_nav_buttons_touch_anywhere_title"
+            android:summaryOn="@string/dim_nav_buttons_touch_anywhere_summary_on"
+            android:summaryOff="@string/dim_nav_buttons_touch_anywhere_summary_off" />
+
+        <SlimSeekBarPreference
+            android:key="dim_nav_buttons_timeout"
+            android:dependency="dim_nav_buttons"
+            android:title="@string/dim_nav_buttons_timeout_title"
+            android:summary="@string/dim_nav_buttons_timeout_summary" />
+
+        <SlimSeekBarPreference
+            android:key="dim_nav_buttons_alpha"
+            android:dependency="dim_nav_buttons"
+            android:title="@string/dim_nav_buttons_alpha_title"
+            android:summary="@string/dim_nav_buttons_alpha_summary" />
+
+        <SwitchPreference
+            android:key="dim_nav_buttons_animate"
+            android:dependency="dim_nav_buttons"
+            android:title="@string/dim_nav_buttons_animate_title"
+            android:summary="@string/dim_nav_buttons_animate_summary" />
+
+        <SlimSeekBarPreference
+            android:key="dim_nav_buttons_animate_duration"
+            android:dependency="dim_nav_buttons_animate"
+            android:title="@string/dim_nav_buttons_animate_duration_title"
+            android:summary="@string/dim_nav_buttons_animate_duration_summary" />
 	    
-
-    <com.android.settings.screwd.NavbarSizePreference
-            android:key="navigation_bar_size"
-            android:title="@string/navigation_bar_size_title" />
-
-    <com.android.settings.screwd.SystemSettingSwitchPreference
-            android:key="navigation_bar_left"
-            android:title="@string/navigation_bar_left_title"
-            android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-    </PreferenceCategory>
+    </PreferenceCategory>	    
+ 	    
 
 </PreferenceScreen>

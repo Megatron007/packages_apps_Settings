@@ -60,6 +60,7 @@
          android:fragment="com.android.settings.screwd.AppCircleBar"
          android:title="@string/app_circle_bar_title"/>
 	
+	
     <PreferenceScreen
     	android:key="floating_windows"
         android:title="@string/floating_windows"

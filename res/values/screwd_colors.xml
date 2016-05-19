@@ -6,7 +6,7 @@
     <color name="floating_action_button_touch_tint">#80ffffff</color>
 
     <!-- DSLV colors -->
-    <color name="dslv_icon_dark">#ff009688</color>
+    <color name="dslv_icon_dark">#ffffffff</color>
     <color name="dslv_float_background_color">#ff1b1f23</color>
 
 
@@ -36,8 +36,5 @@
     <color name="list_item_title">#ffeeeeee</color>
     <color name="cardlayout_bg">#ff424242</color>
     <color name="background_color_gray">#ddd</color>
-    
-    <color name="theme_accent">#ff009688</color>
-    <color name="action_picker_fab_background">@color/theme_accent</color>
 
 </resources>

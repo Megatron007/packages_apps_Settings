@@ -21,12 +21,6 @@ import android.provider.SearchIndexableResource;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import java.util.ArrayList;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ContentResolver;
@@ -40,18 +34,12 @@ import android.provider.Settings;
 import android.preference.ListPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 
-import com.android.internal.utils.du.ActionConstants;
-import com.android.internal.utils.du.Config;
-import com.android.internal.utils.du.DUActionUtils;
-import com.android.settings.screwd.SecureSettingSwitchPreference;
-import com.android.internal.utils.du.Config.ButtonConfig;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -59,32 +47,47 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.slim.Action;
+import com.android.internal.util.slim.DeviceUtils;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.android.internal.logging.MetricsLogger;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 public class Navbar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 	
-	private static final String NAVBAR_VISIBILITY = "navbar_visibility";
-    private static final String KEY_NAVBAR_MODE = "navbar_mode";
-    private static final String KEY_AOSP_NAVBAR_SETTINGS = "aosp_navbar_settings";
-    private static final String KEY_FLING_NAVBAR_SETTINGS = "fling_settings";
-    private static final String KEY_CATEGORY_NAVIGATION_INTERFACE = "category_navbar_interface";
-    private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
-    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
-    private static final String KEY_SMARTBAR_SETTINGS = "smartbar_settings";
-    private static final String KEY_NAVIGATION_BAR_SIZE = "navigation_bar_size";
+    private static final String TAG = "NavBar";
+    private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
+    private static final String PREF_NAVBAR_MENU_DISPLAY = "pref_navbar_menu_display";
+    private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
+    private static final String PREF_BUTTON = "navbar_button_settings";
+    private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
+    private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+	private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
+	
+	private static final String DIM_NAV_BUTTONS = "dim_nav_buttons";
+    private static final String DIM_NAV_BUTTONS_TIMEOUT = "dim_nav_buttons_timeout";
+    private static final String DIM_NAV_BUTTONS_ALPHA = "dim_nav_buttons_alpha";
+    private static final String DIM_NAV_BUTTONS_ANIMATE = "dim_nav_buttons_animate";
+    private static final String DIM_NAV_BUTTONS_ANIMATE_DURATION = "dim_nav_buttons_animate_duration";
+    private static final String DIM_NAV_BUTTONS_TOUCH_ANYWHERE = "dim_nav_buttons_touch_anywhere";
+	
+	private int mNavBarMenuDisplayValue;
 
-    private SwitchPreference mNavbarVisibility;
-    private ListPreference mNavbarMode;
-    private PreferenceScreen mFlingSettings;
-    private PreferenceCategory mNavInterface;
-    private PreferenceCategory mNavGeneral;
-    private PreferenceScreen mSmartbarSettings;
+    ListPreference mMenuDisplayLocation;
+    ListPreference mNavBarMenuDisplay;
+    SwitchPreference mEnableNavigationBar;
+    SwitchPreference mNavigationBarCanMove;
+    PreferenceScreen mButtonPreference;
+    PreferenceScreen mStyleDimenPreference;
+	SwitchPreference mStatusBarImeArrows;
+
+    private SwitchPreference mDimNavButtons;
+    private SlimSeekBarPreference mDimNavButtonsTimeout;
+    private SlimSeekBarPreference mDimNavButtonsAlpha;
+    private SwitchPreference mDimNavButtonsAnimate;
+    private SlimSeekBarPreference mDimNavButtonsAnimateDuration;
+    private SwitchPreference mDimNavButtonsTouchAnywhere;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,66 +100,190 @@ public class Navbar extends SettingsPreferenceFragment implements
 		ContentResolver resolver = getActivity().getContentResolver();
 		PreferenceScreen prefSet = getPreferenceScreen();
 		
-		mNavInterface = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_INTERFACE);
-        mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
-        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
-        mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
-        mFlingSettings = (PreferenceScreen) findPreference(KEY_FLING_NAVBAR_SETTINGS);
-        mSmartbarSettings = (PreferenceScreen) findPreference(KEY_SMARTBAR_SETTINGS);
+		mMenuDisplayLocation = (ListPreference) findPreference(PREF_MENU_LOCATION);
+        mMenuDisplayLocation.setValue(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.MENU_LOCATION,
+                0) + "");
+        mMenuDisplayLocation.setOnPreferenceChangeListener(this);
 
-        boolean showing = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.NAVIGATION_BAR_VISIBLE,
-                DUActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0) != 0;
-        updateBarVisibleAndUpdatePrefs(showing);
-        mNavbarVisibility.setOnPreferenceChangeListener(this);
+        mNavBarMenuDisplay = (ListPreference) findPreference(PREF_NAVBAR_MENU_DISPLAY);
+        mNavBarMenuDisplayValue = Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.MENU_VISIBILITY,
+                2);
+        mNavBarMenuDisplay.setValue(mNavBarMenuDisplayValue + "");
+        mNavBarMenuDisplay.setOnPreferenceChangeListener(this);
 
-        int mode = Settings.Secure.getInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_MODE,
-                0);
+        mButtonPreference = (PreferenceScreen) findPreference(PREF_BUTTON);
+        mStyleDimenPreference = (PreferenceScreen) findPreference(PREF_STYLE_DIMEN);
 
-        // Smartbar moved from 2 to 0, deprecating old navbar
-        if (mode == 2) {
-            mode = 0;
-        }
-        updateBarModeSettings(mode);
-        mNavbarMode.setOnPreferenceChangeListener(this);
+        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, 1) == 1;
+        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
+        mEnableNavigationBar.setChecked(enableNavigationBar);
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
 
-        // Navigation bar left-in-landscape
-        // remove if not a phone
-        if (!DUActionUtils.isNormalScreen()) {
-            mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_BAR_LEFT));
-        }
+        mNavigationBarCanMove = (SwitchPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
+        mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_CAN_MOVE,
+                DeviceUtils.isPhone(getActivity()) ? 1 : 0) == 0);
+        mNavigationBarCanMove.setOnPreferenceChangeListener(this);
+		
+		mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
+        mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
+        mStatusBarImeArrows.setOnPreferenceChangeListener(this);
 			
 
+        // SlimDim
+        mDimNavButtons = (SwitchPreference) findPreference(DIM_NAV_BUTTONS);
+        mDimNavButtons.setOnPreferenceChangeListener(this);
+
+        mDimNavButtonsTouchAnywhere = (SwitchPreference) findPreference(DIM_NAV_BUTTONS_TOUCH_ANYWHERE);
+        mDimNavButtonsTouchAnywhere.setOnPreferenceChangeListener(this);
+
+        mDimNavButtonsTimeout = (SlimSeekBarPreference) findPreference(DIM_NAV_BUTTONS_TIMEOUT);
+        mDimNavButtonsTimeout.setDefault(3000);
+        mDimNavButtonsTimeout.isMilliseconds(true);
+        mDimNavButtonsTimeout.setInterval(1);
+        mDimNavButtonsTimeout.minimumValue(100);
+        mDimNavButtonsTimeout.multiplyValue(100);
+        mDimNavButtonsTimeout.setOnPreferenceChangeListener(this);
+
+        mDimNavButtonsAlpha = (SlimSeekBarPreference) findPreference(DIM_NAV_BUTTONS_ALPHA);
+        mDimNavButtonsAlpha.setDefault(50);
+        mDimNavButtonsAlpha.setInterval(1);
+        mDimNavButtonsAlpha.setOnPreferenceChangeListener(this);
+
+        mDimNavButtonsAnimate = (SwitchPreference) findPreference(DIM_NAV_BUTTONS_ANIMATE);
+        mDimNavButtonsAnimate.setOnPreferenceChangeListener(this);
+
+        mDimNavButtonsAnimateDuration = (SlimSeekBarPreference) findPreference(DIM_NAV_BUTTONS_ANIMATE_DURATION);
+        mDimNavButtonsAnimateDuration.setDefault(2000);
+        mDimNavButtonsAnimateDuration.isMilliseconds(true);
+        mDimNavButtonsAnimateDuration.setInterval(1);
+        mDimNavButtonsAnimateDuration.minimumValue(100);
+        mDimNavButtonsAnimateDuration.multiplyValue(100);
+        mDimNavButtonsAnimateDuration.setOnPreferenceChangeListener(this);
+        updateSettings();
     }
 	
+	private void updateSettings() {
+        boolean enableNavigationBar = Action.isNavBarEnabled(getActivity());
 
-    private void updateBarModeSettings(int mode) {
-        mNavbarMode.setValue(String.valueOf(mode));
-        mSmartbarSettings.setEnabled(mode == 0);
-        mSmartbarSettings.setSelectable(mode == 0);
-        mFlingSettings.setEnabled(mode == 1);
-        mFlingSettings.setSelectable(mode == 1);
+        if (mDimNavButtons != null) {
+            mDimNavButtons.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS, 0) == 1);
+        }
+
+        if (mDimNavButtonsTouchAnywhere != null) {
+            mDimNavButtonsTouchAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS_TOUCH_ANYWHERE, 0) == 1);
+        }
+
+        if (mDimNavButtonsTimeout != null) {
+            final int dimTimeout = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS_TIMEOUT, 3000);
+            // minimum 100 is 1 interval of the 100 multiplier
+            mDimNavButtonsTimeout.setInitValue((dimTimeout / 100) - 1);
+        }
+
+        if (mDimNavButtonsAlpha != null) {
+            int alphaScale = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS_ALPHA, 50);
+            mDimNavButtonsAlpha.setInitValue(alphaScale);
+        }
+
+        if (mDimNavButtonsAnimate != null) {
+            mDimNavButtonsAnimate.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS_ANIMATE, 0) == 1);
+        }
+
+        if (mDimNavButtonsAnimateDuration != null) {
+            final int animateDuration = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DIM_NAV_BUTTONS_ANIMATE_DURATION, 2000);
+            // minimum 100 is 1 interval of the 100 multiplier
+            mDimNavButtonsAnimateDuration.setInitValue((animateDuration / 100) - 1);
+        }
+
+        updateNavbarPreferences(enableNavigationBar);
     }
-
-    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
-        mNavbarVisibility.setChecked(showing);
-        mNavInterface.setEnabled(mNavbarVisibility.isChecked());
-        mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
+	
+	private void updateNavbarPreferences(boolean show) {
+        mNavBarMenuDisplay.setEnabled(show);
+        mButtonPreference.setEnabled(show);
+        mStyleDimenPreference.setEnabled(show);
+        mNavigationBarCanMove.setEnabled(show);
+        mMenuDisplayLocation.setEnabled(show
+            && mNavBarMenuDisplayValue != 1);
+		mStatusBarImeArrows.setEnabled(show);	
+		
+		mDimNavButtons.setEnabled(show);
+        mDimNavButtonsTouchAnywhere.setEnabled(show);
+        mDimNavButtonsTimeout.setEnabled(show);
+        mDimNavButtonsAlpha.setEnabled(show);
+        mDimNavButtonsAnimate.setEnabled(show);
+        mDimNavButtonsAnimateDuration.setEnabled(show);
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		if (preference.equals(mNavbarMode)) {
-            int mode = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.NAVIGATION_BAR_MODE, mode);
-            updateBarModeSettings(mode);
+		if (preference == mMenuDisplayLocation) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
             return true;
-        } else if (preference.equals(mNavbarVisibility)) {
-            boolean showing = ((Boolean)newValue);
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_VISIBLE,
-                    showing ? 1 : 0);
-            updateBarVisibleAndUpdatePrefs(showing);
+        } else if (preference == mNavBarMenuDisplay) {
+            mNavBarMenuDisplayValue = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.MENU_VISIBILITY, mNavBarMenuDisplayValue);
+            mMenuDisplayLocation.setEnabled(mNavBarMenuDisplayValue != 1);
+            return true;
+        } else if (preference == mEnableNavigationBar) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW,
+                    ((Boolean) newValue) ? 1 : 0);
+            updateNavbarPreferences((Boolean) newValue);
+            return true;
+        } else if (preference == mNavigationBarCanMove) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_CAN_MOVE,
+                    ((Boolean) newValue) ? 0 : 1);
+            return true;
+		} else if (preference == mStatusBarImeArrows) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;	
+        } else if (preference == mDimNavButtons) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mDimNavButtonsTouchAnywhere) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS_TOUCH_ANYWHERE,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mDimNavButtonsTimeout) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS_TIMEOUT, Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mDimNavButtonsAlpha) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS_ALPHA, Integer.parseInt((String) newValue));
+            return true;
+        } else if (preference == mDimNavButtonsAnimate) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS_ANIMATE,
+                    ((Boolean) newValue) ? 1 : 0);
+            return true;
+        } else if (preference == mDimNavButtonsAnimateDuration) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.DIM_NAV_BUTTONS_ANIMATE_DURATION,
+                Integer.parseInt((String) newValue));
             return true;
         }
         return false;

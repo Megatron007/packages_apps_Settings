@@ -30,9 +30,13 @@
     <dimen name="qs_tile_max_padding">10dp</dimen>
     <dimen name="qs_tile_dragged_z">10dp</dimen>
     
-    <!-- navbar height -->
-    <integer name="navigation_bar_height_min_percent">65</integer>
-    <integer name="navigation_bar_height_max_percent">120</integer>
-    <integer name="navigation_bar_width_min_percent">65</integer>
-    <integer name="navigation_bar_width_max_percent">120</integer>
+    <!-- Navbar -->
+    <dimen name="navigation_bar_48">48dp</dimen>
+    <dimen name="navigation_bar_44">44dp</dimen>
+    <dimen name="navigation_bar_42">42dp</dimen>
+    <dimen name="navigation_bar_40">40dp</dimen>
+    <dimen name="navigation_bar_36">36dp</dimen>
+    <dimen name="navigation_bar_30">30dp</dimen>
+    <dimen name="navigation_bar_24">24dp</dimen>
+    <dimen name="navigation_bar_0">0dp</dimen>
 </resources>

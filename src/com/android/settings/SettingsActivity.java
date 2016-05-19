@@ -71,10 +71,7 @@ import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.applications.DrawOverlayDetails;
-import com.android.settings.screwd.FlingSettings;
 import com.android.settings.screwd.HeadsUpSettings;
-import com.android.settings.screwd.Navbar;
-import com.android.settings.screwd.SmartbarSettings;
 import com.android.settings.paranoid.PieControl;
 import com.android.settings.screwd.FloatingWindows;
 import com.android.settings.applications.InstalledAppDetails;
@@ -371,9 +368,6 @@ public class SettingsActivity extends Activity
 	    PieControl.class.getName(),
             DisplayRotation.class.getName(),
 	    ScrewdSettings.class.getName(),
-            Navbar.class.getName(),
-            FlingSettings.class.getName(),
-            SmartbarSettings.class.getName(),
 	    FloatingWindows.class.getName(),
             HeadsUpSettings.class.getName()
     };
