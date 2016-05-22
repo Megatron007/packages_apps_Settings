@@ -365,11 +365,6 @@
     <string name="contextual_title">Contextual headers</string>
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
-    <string name="status_bar_custom_header_default_title">Select your images</string>
-    <string name="custom_header_image_0">Default</string>
-    <string name="custom_header_image_1">Modern</string>
-    <string name="custom_header_image_2">Poly HD</string>
-    <string name="custom_header_image_3">Screw\'d HD</string>
 
     <!-- Lock screen wallpaper -->
     <string name="lockscreen_settings_title">Lockscreen wallpaper</string>
