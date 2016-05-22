@@ -67,13 +67,12 @@ import com.android.settings.widget.SeekBarPreferenceCham;
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "StatusBarSettings";
-	
-    private static final String PREF_CUSTOM_HEADER_DEFAULT = "status_bar_custom_header_default";
+
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
     private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String ENABLE_TASK_MANAGER = "enable_task_manager";
-	
+
     private static final String CATEGORY_WEATHER = "statusbar_weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
@@ -81,14 +80,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
     private static final String LOCK_CLOCK_PACKAGE="com.cyanogenmod.lockclock";
 
-    private ListPreference mCustomHeaderDefault;
     private SeekBarPreferenceCham mHeaderShadow;
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
     private SwitchPreference mEnableTaskManager;
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
-	
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,28 +95,19 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.screwd_statusbar_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-		
+
 	ContentResolver resolver = getActivity().getContentResolver();
 
         PackageManager pm = getPackageManager();
 
     }
-	
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-       // Status bar custom header default
-        mCustomHeaderDefault = (ListPreference) findPreference(PREF_CUSTOM_HEADER_DEFAULT);
-        mCustomHeaderDefault.setOnPreferenceChangeListener(this);
-        int customHeaderDefault = Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0);
-        mCustomHeaderDefault.setValue(String.valueOf(customHeaderDefault));
-        mCustomHeaderDefault.setSummary(mCustomHeaderDefault.getEntry());
-
 
         // Statusbar temp
         mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
@@ -138,7 +127,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
 
         enableStatusBarTemperatureDependents();
-		
+
 	mEnableTaskManager = (SwitchPreference) findPreference(ENABLE_TASK_MANAGER);
         mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
                 Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
@@ -148,7 +137,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue(headerShadow);
         mHeaderShadow.setOnPreferenceChangeListener(this);
-		
+
 	mWeatherCategory = (PreferenceCategory) prefSet.findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
             prefSet.removePreference(mWeatherCategory);
@@ -182,13 +171,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
-		if (preference == mCustomHeaderDefault) {
-            int customHeaderDefault = Integer.valueOf((String) newValue);
-            int index = mCustomHeaderDefault.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(), 
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, customHeaderDefault);
-            mCustomHeaderDefault.setSummary(mCustomHeaderDefault.getEntries()[index]);
-		} else if (preference == mHeaderShadow) {
+		if (preference == mHeaderShadow) {
          int headerShadow = (Integer) newValue;
          Settings.System.putInt(getActivity().getContentResolver(),
                  Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
@@ -218,7 +201,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         }
         return true;
     }
-	
+
 	@Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 		if  (preference == mEnableTaskManager) {
@@ -226,17 +209,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.ENABLE_TASK_MANAGER, checked ? 1:0);
             return true;
-		}	
-		
+		}
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
-	
+
 
     @Override
     public void onResume() {
         super.onResume();
     }
-	
+
 	private boolean isOmniJawsServiceInstalled() {
         return PackageUtils.isAvailableApp(WEATHER_SERVICE_PACKAGE, getActivity());
     }
@@ -308,7 +291,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             entrieswi.add("LockClock (vclouds)");
         }
     }
-	
+
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
         new BaseSearchIndexProvider() {
         @Override
@@ -330,12 +313,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             return result;
         }
     };
-	
+
 	@Override
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
     }
-	
+
 	private void enableStatusBarTemperatureDependents() {
         int temperatureShow = Settings.System.getIntForUser(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
