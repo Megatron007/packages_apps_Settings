@@ -1072,12 +1072,16 @@
         <item>@string/statusbar_logo_off</item>
         <item>@string/statusbar_logo_static</item>
         <item>@string/statusbar_logo_animated</item>
+	<item>@string/statusbar_logo_static2</item>
+        <item>@string/statusbar_logo_animated2</item>
     </string-array>
 
     <string-array name="statusbar_logo_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+	<item>3</item>
+        <item>4</item>
     </string-array>
     
     <!-- Lockscreen Bouncer -->
