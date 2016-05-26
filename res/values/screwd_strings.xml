@@ -1325,8 +1325,10 @@
     <string name="status_bar_screwd_logo_summary">Enable to show Screw\'d  logo on the left side of statusbar</string>
     <string name="status_bar_screwd_logo_color">Screw\'d logo color</string>
     <string name="statusbar_logo_off">No logo</string>
-    <string name="statusbar_logo_static">Non-animated</string>
-    <string name="statusbar_logo_animated">Animated</string>
+    <string name="statusbar_logo_static">Style 1 - Non-animated</string>
+    <string name="statusbar_logo_animated">Style 1 - Animated</string>
+    <string name="statusbar_logo_static2">Style 2 - Non-animated</string>
+    <string name="statusbar_logo_animated2">Style 2 - Animated</string>
     
     <!-- Flashlight notification -->
     <string name="flashlight_notification_title">Flashlight notification</string>
