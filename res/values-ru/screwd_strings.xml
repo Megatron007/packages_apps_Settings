@@ -214,6 +214,7 @@
   <!-- Bluetooth settings. A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
   <!-- Quick settings quick pull down -->
   <!-- Quick Settings brightness slider -->
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Вибрация при нажатии</string>
   <!-- QuickSettings 4 columns -->
@@ -386,4 +387,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

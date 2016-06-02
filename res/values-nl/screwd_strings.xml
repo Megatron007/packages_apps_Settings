@@ -279,6 +279,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Helderheid slider</string>
   <string name="qs_brightness_slider_summary">Toon helderheid slider in het snelle instellingen paneel</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Trillen bij aanraking</string>
   <string name="quick_settings_vibrate_summary">Trillen bij het aanraken van de tegels</string>
@@ -322,11 +323,6 @@
   <string name="contextual_title">Contextuele headers</string>
   <string name="status_bar_custom_header_title">Aangepaste header afbeelding</string>
   <string name="status_bar_custom_header_summary">Inschakelen header afbeeldingen meldingenpaneel</string>
-  <string name="status_bar_custom_header_default_title">Selecteer uw afbeeldingen</string>
-  <string name="custom_header_image_0">Standaard</string>
-  <string name="custom_header_image_1">Modern</string>
-  <string name="custom_header_image_2">Poly HD</string>
-  <string name="custom_header_image_3">Screw\'d HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Vergrendelscherm achtergrond</string>
   <string name="lockscreen_wallpaper_title">Achtergrond</string>
@@ -1186,8 +1182,6 @@
   <string name="status_bar_screwd_logo_summary">Inschakelen om Screw\'d logo weer te geven links op de statusbalk</string>
   <string name="status_bar_screwd_logo_color">Kleur Screw\'d logo</string>
   <string name="statusbar_logo_off">Geen logo</string>
-  <string name="statusbar_logo_static">Niet geanimeerd</string>
-  <string name="statusbar_logo_animated">Geanimeerd</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Zaklamp notificatie</string>
   <string name="flashlight_notification_summary">Inschakelen notificatie wanneer de zaklamp ingeschakeld is</string>
@@ -1351,4 +1345,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

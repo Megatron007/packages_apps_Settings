@@ -237,6 +237,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Kecerahan slider</string>
   <string name="qs_brightness_slider_summary">Menunjukkan slaid kecerahan dalam panel seting cepat</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Bergetar pada sentuhan</string>
   <string name="quick_settings_vibrate_summary">Bergetar apabila menyentuh jubin</string>
@@ -280,10 +281,6 @@
   <string name="contextual_title">Konteks header</string>
   <string name="status_bar_custom_header_title">Adat pengepala imej</string>
   <string name="status_bar_custom_header_summary">Mendayakan pemberitahuan panel pengepala imej</string>
-  <string name="status_bar_custom_header_default_title">Pilih imej anda</string>
-  <string name="custom_header_image_0">Asal</string>
-  <string name="custom_header_image_1">Moden</string>
-  <string name="custom_header_image_2">Poli HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Kertas dinding skrin berkunci</string>
   <string name="lockscreen_wallpaper_title">Wallpaper</string>
@@ -505,4 +502,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>
