@@ -279,6 +279,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Trượt điều chỉnh độ sáng</string>
   <string name="qs_brightness_slider_summary">Hiển thị một thanh trượt độ sáng trong bảng cài đặt nhanh</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Rung khi chạm</string>
   <string name="quick_settings_vibrate_summary">rung khi chạm vào các Tiles</string>
@@ -322,11 +323,6 @@
   <string name="contextual_title">Tiêu đề theo ngữ cảnh</string>
   <string name="status_bar_custom_header_title">Tiêu đề tùy chỉnh hình ảnh</string>
   <string name="status_bar_custom_header_summary">Sử thông báo bảng tiêu đề hình ảnh</string>
-  <string name="status_bar_custom_header_default_title">Chọn hình ảnh của bạn</string>
-  <string name="custom_header_image_0">Mặc định</string>
-  <string name="custom_header_image_1">Hiện đại</string>
-  <string name="custom_header_image_2">Poly HD</string>
-  <string name="custom_header_image_3">Screw\'d HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Hình nền màn hình khoá</string>
   <string name="lockscreen_wallpaper_title">Hình nền</string>
@@ -1186,8 +1182,6 @@
   <string name="status_bar_screwd_logo_summary">Kích hoạt để hiển thị biểu tượng Screw\'d ở bên trái của thanh trạng thái</string>
   <string name="status_bar_screwd_logo_color">Màu sắc của biểu tượng Screw\'d</string>
   <string name="statusbar_logo_off">Không có biểu tượng</string>
-  <string name="statusbar_logo_static">Không-hoạt cảnh</string>
-  <string name="statusbar_logo_animated">Hoạt cảnh</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Đèn pin thông báo</string>
   <string name="flashlight_notification_summary">Kích hoạt cho thông báo khi đèn pin là bật</string>
@@ -1347,7 +1341,6 @@
   <string name="unit_percent">\u0025</string>
   <!-- Hide Apps from Recents -->
   <string name="hide_from_recents_add_app">Thêm ứng dụng</string>
-  <string name="hide_apps_from_recents_summary">Pick which apps to exclude from the recents panel.</string>
   <!-- Heads up snooze -->
   <string name="heads_up_snooze_title">Snooze timer</string>
   <string name="heads_up_snooze_summary">Swiping up on the heads up notification will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
@@ -1377,4 +1370,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

@@ -31,6 +31,7 @@
   <string name="sounds">Volume &amp; suoni</string>
   <string name="kernel_tweaker">Kernel Adiutor</string>
   <string name="bitsyko_layers">Layers Manager</string>
+  <string name="viper_title">Viper4Android</string>
   <string name="themes_settings_title">Temi</string>
   <!-- Screw'd Settings cats-->
   <string name="sound_buttons_cat">Pulsanti</string>
@@ -281,6 +282,9 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Cursore di Luminosità</string>
   <string name="qs_brightness_slider_summary">Mostra cursore luminosità nel pannello Impostazioni rapide</string>
+  <!-- Quick Settings brightness button -->
+  <string name="brightness_icon_title">Icona luminosità </string>
+  <string name="brightness_icon_summary">Mostra icona luminosità a sinistra dello slider luminosità per aggiustare la luminosità automatica</string>
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Vibra al tocco</string>
   <string name="quick_settings_vibrate_summary">Vibrazione quando si toccano i tile</string>
@@ -324,11 +328,6 @@
   <string name="contextual_title">Header notifiche</string>
   <string name="status_bar_custom_header_title">Immagine header personalizzata</string>
   <string name="status_bar_custom_header_summary">Attiva un\'immagine nell\'header del pannello di notifica</string>
-  <string name="status_bar_custom_header_default_title">Seleziona le tue immagini</string>
-  <string name="custom_header_image_0">Predefinita</string>
-  <string name="custom_header_image_1">Moderna</string>
-  <string name="custom_header_image_2">Poly HD</string>
-  <string name="custom_header_image_3">Screw\'d HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Sfondo schermata di blocco</string>
   <string name="lockscreen_wallpaper_title">Sfondo</string>
@@ -610,6 +609,7 @@
   <string name="shortcut_action_media_play_pause">Musica - play/pausa</string>
   <string name="shortcut_action_media_previous">Musica - traccia precedente</string>
   <string name="shortcut_action_wake_device">Risveglia il dispositivo</string>
+  <string name="shortcut_action_torch">Torcia</string>
   <string name="shortcut_action_longpress">Pressione lunga:</string>
   <string name="shortcut_action_select_action_longpress">Scegli azione pressione lunga:</string>
   <string name="shortcut_action_select_action">Scegli azione:</string>
@@ -1196,8 +1196,6 @@
   <string name="status_bar_screwd_logo_summary">Abilita per mostrare il logo screw\'d a sinistra della statusbar</string>
   <string name="status_bar_screwd_logo_color">Colore logo screw\'d</string>
   <string name="statusbar_logo_off">Disattivo</string>
-  <string name="statusbar_logo_static">Non animato</string>
-  <string name="statusbar_logo_animated">Animato</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Notifica torcia</string>
   <string name="flashlight_notification_summary">Mostra una notifica quando la torcia è accesa</string>
@@ -1376,6 +1374,7 @@
   <string name="factor2">Lento</string>
   <string name="factor3">Veloce</string>
   <string name="factor4">Velocissimo</string>
+  <string name="pulse_custom_fudge_factor">Velocità Barra Pulse</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Dimensione barra</string>
   <string name="portrait_title">Altezza in verticale</string>
@@ -1412,7 +1411,7 @@
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">Applicazioni nascoste</string>
   <string name="hide_from_recents_add_app">Aggiungi app</string>
-  <string name="hide_apps_from_recents_summary">Scegli quali app da escludere dal pannello recenti.</string>
+  <string name="hide_apps_from_recents_summary">Scegli quali app escludere dal pannello recenti</string>
   <!-- Heads up snooze -->
   <string name="heads_up_snooze_title">Timer di sospensione</string>
   <string name="heads_up_snooze_summary">Strisciare verso l\'alto su una notifica Heads up la sospenderà per <xliff:g id="number">%d</xliff:g> minuti</string>
@@ -1454,6 +1453,8 @@
   <!-- Slim Shortcuts -->
   <string name="slim_shortcut_picker">Scorciatoie Slim</string>
   <!-- Chamber of Secrets -->
+  <string name="chamber_title">House of Lean</string>
+  <string name="chamber_toast">Lean è pronto, datemi una tazza!!!</string>
   <!-- Advanced storage settings -->
   <string name="storage_advanced_titlebar">Storage Avanzato</string>
   <string name="storage_menu_advanced">Avanzate</string>
@@ -1461,4 +1462,15 @@
   <string name="usb_data_auto_unlock_title">Sblocca dati USB</string>
   <string name="usb_data_auto_unlock_summary">Consente l\'accesso sbloccato dei dati di archiviazione del telefono tramite USB (MTP, PTP)</string>
   <string name="usb_data_auto_unlock_warning_summary">Il dispositivo stabilirà connessioni non protette, ogni volta che si collega ad un PC. Le schermate di blocco sicure disabiliteranno questa opzione automaticamente.\n\nQuesta è una funzione ancora sperimentale, usare con cautela.</string>
+  <!-- Tiles animation style  -->
+  <string name="qs_tile_animation_style_title">Stile animazione tile</string>
+  <string name="qs_tile_animation_duration_title">Durata animazione tile</string>
+  <string name="qs_tile_animation_style_off">niente animazione</string>
+  <string name="qs_tile_animation_style_flip">capovolgi</string>
+  <string name="qs_tile_animation_style_rotate">ruota</string>
+  <string name="qs_tile_animation_duration_low">lenta</string>
+  <string name="qs_tile_animation_duration_default">predefinita</string>
+  <string name="qs_tile_animation_duration_fast">veloce</string>
+  <string name="qs_set_animation_style">L\'animazione è impostata su %1$s</string>
+  <string name="qs_set_animation_duration">La durata dell\'animazione è impostata su %1$s</string>
 </resources>

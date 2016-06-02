@@ -17,6 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Screw'd Settings -->
   <string name="header_customize">Personalizar</string>
+  <string name="header_category_screwd">Configuración Screw\'d</string>
   <string name="ui">Interfaz de usuario</string>
   <string name="system">Sistema</string>
   <string name="notifications">Notificaciones</string>
@@ -30,6 +31,7 @@
   <string name="sounds">Sonidos y volumen</string>
   <string name="kernel_tweaker">Kernel Auditor</string>
   <string name="bitsyko_layers">Administrador de Layers</string>
+  <string name="viper_title">Viper4Android</string>
   <string name="themes_settings_title">Temas</string>
   <!-- Screw'd Settings cats-->
   <string name="sound_buttons_cat">Botones</string>
@@ -280,6 +282,9 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Control deslizante de brillo</string>
   <string name="qs_brightness_slider_summary">Mostrar control deslizante de brillo en el panel de ajustes rápidos</string>
+  <!-- Quick Settings brightness button -->
+  <string name="brightness_icon_title">Icono de brillo </string>
+  <string name="brightness_icon_summary">Mostrar un icono de brillo hacia la izquierda del control deslizante para ajustar el brillo automático</string>
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Vibrar al tocar</string>
   <string name="quick_settings_vibrate_summary">Vibrar al tocar los azulejos</string>
@@ -323,11 +328,6 @@
   <string name="contextual_title">Encabezado contextual</string>
   <string name="status_bar_custom_header_title">Imagen de encabezado personalizada</string>
   <string name="status_bar_custom_header_summary">Habilitar notificación panel cabecera de la imagen</string>
-  <string name="status_bar_custom_header_default_title">Seleccione sus imágenes</string>
-  <string name="custom_header_image_0">Por defecto</string>
-  <string name="custom_header_image_1">Moderno</string>
-  <string name="custom_header_image_2">Poly HD</string>
-  <string name="custom_header_image_3">Screw\'d HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Fondo de pantalla de bloqueo</string>
   <string name="lockscreen_wallpaper_title">Fondo de pantalla</string>
@@ -609,6 +609,7 @@
   <string name="shortcut_action_media_play_pause">Música - Reproducir/pausa</string>
   <string name="shortcut_action_media_previous">Música - pista anterior</string>
   <string name="shortcut_action_wake_device">Despierta el dispositivo</string>
+  <string name="shortcut_action_torch">Linterna</string>
   <string name="shortcut_action_longpress">Pulsación larga:</string>
   <string name="shortcut_action_select_action_longpress">Elegir acción de pulsación larga:</string>
   <string name="shortcut_action_select_action">Seleccionar acción:</string>
@@ -1195,8 +1196,6 @@
   <string name="status_bar_screwd_logo_summary">Activar logo screw\'d a la izquierda de la barra de estado</string>
   <string name="status_bar_screwd_logo_color">Color logo screw\'d</string>
   <string name="statusbar_logo_off">Ningun logo</string>
-  <string name="statusbar_logo_static">No-animado</string>
-  <string name="statusbar_logo_animated">Animado</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Notificación de la linterna</string>
   <string name="flashlight_notification_summary">Habilitar notificiation para cuando la linterna está encendida</string>
@@ -1318,6 +1317,7 @@
   <string name="fling_longpress_summary">Aumentar o disminuir el tiempo que toma realizar una pulsación larga</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Acerca de pulso</string>
+  <string name="pulse_help_policy_notice_summary">Pulso es una genial barra de ecualización de audio en la barra de navegación cuando la musica se reproduce. Pulso no funciona con algunos reproductores de audio cuando se escucha en el altavoz del dispositivo. dar a play/pause después de redimensionar para que cumpla efecto.</string>
   <string name="pulse_settings">Pulsación</string>
   <string name="pulse_settings_summary">Visualización de barra de audio en barra de navegación</string>
   <string name="fling_show_pulse_title">Ver pulso</string>
@@ -1325,6 +1325,56 @@
   <string name="fling_pulse_color">Color de pulso</string>
   <string name="eos_fling_lavalamp_title">Encienda la lámpara de Lava</string>
   <string name="eos_fling_lavalamp_summary">Pulso anima una mezcla de color de estilo de lámpara de lava lisa</string>
+  <string name="pulse_custom_dimen">Ancho de barra de pulso</string>
+  <string name="pulse_dimen0">Por defecto</string>
+  <string name="pulse_dimen1">7dp</string>
+  <string name="pulse_dimen2">8dp</string>
+  <string name="pulse_dimen3">9dp</string>
+  <string name="pulse_dimen4">10dp</string>
+  <string name="pulse_dimen5">11dp</string>
+  <string name="pulse_dimen6">12dp</string>
+  <string name="pulse_dimen7">13dp</string>
+  <string name="pulse_dimen8">15dp</string>
+  <string name="pulse_dimen9">16dp</string>
+  <string name="pulse_dimen10">17dp</string>
+  <string name="pulse_dimen11">18dp</string>
+  <string name="pulse_dimen12">19dp</string>
+  <string name="pulse_dimen13">20dp</string>
+  <string name="pulse_dimen14">21dp</string>
+  <string name="pulse_dimen15">22dp</string>
+  <string name="pulse_dimen16">23dp</string>
+  <string name="pulse_dimen17">24dp</string>
+  <string name="pulse_dimen18">25dp</string>
+  <string name="pulse_dimen19">26dp</string>
+  <string name="pulse_custom_div">Espaciamiento de barra de pulso</string>
+  <string name="default_div">Por defecto</string>
+  <string name="div1">18</string>
+  <string name="div2">20</string>
+  <string name="div3">22</string>
+  <string name="div4">24</string>
+  <string name="div5">26</string>
+  <string name="div6">28</string>
+  <string name="div7">30</string>
+  <string name="div8">32</string>
+  <string name="default_fill">4dp(por defecto)</string>
+  <string name="pulse_bar_style">Estilo de barra de pulso</string>
+  <string name="default_pulse_empty">1dp(por defecto)</string>
+  <string name="pulse_filled_block_size">Tamaño del bloque</string>
+  <string name="pulse_empty_block_size">Espaciado del bloque</string>
+  <string name="pulse_fill1">5dp</string>
+  <string name="pulse_fill2">6dp</string>
+  <string name="pulse_fill3">7dp</string>
+  <string name="pulse_fill4">8dp</string>
+  <string name="pulse_empty1">2dp</string>
+  <string name="pulse_empty2">3dp</string>
+  <string name="pulse_empty3">4dp</string>
+  <string name="pulse_empty4">0 (sin espacio)</string>
+  <string name="factor0">Normal</string>
+  <string name="factor1">Relajado</string>
+  <string name="factor2">Lento</string>
+  <string name="factor3">Rápido</string>
+  <string name="factor4">Loco</string>
+  <string name="pulse_custom_fudge_factor">Nivel de cordura de visualizador</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Tamaño de la barra</string>
   <string name="portrait_title">Altura de retrato</string>
@@ -1361,7 +1411,7 @@
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">Aplicaciones ocultas</string>
   <string name="hide_from_recents_add_app">Añadir aplicación</string>
-  <string name="hide_apps_from_recents_summary">Escoger las aplicaciones a excluir desde el panel de recientes.</string>
+  <string name="hide_apps_from_recents_summary">Escoger las aplicaciones a excluir desde el panel de recientes</string>
   <!-- Heads up snooze -->
   <string name="heads_up_snooze_title">Temporizador de repetición</string>
   <string name="heads_up_snooze_summary">Deslizar hacia arriba la notificación heads up la silenciará durante <xliff:g id="number">%d</xliff:g> minutos</string>
@@ -1392,16 +1442,35 @@
   <string name="weather_icon_pack_title">Pack de iconos de estado</string>
   <string name="text_title">Texto</string>
   <string name="number_of_notifications_title">Número de notificaciones</string>
+  <string name="number_of_notifications_one_title">1 (ocultar toda notificación)</string>
   <string name="number_of_notifications_two_title">2</string>
   <string name="number_of_notifications_three_title">3</string>
   <string name="number_of_notifications_four_title">4</string>
   <string name="number_of_notifications_five_title">5</string>
   <string name="number_of_notifications_six_title">6</string>
   <string name="carrier_label_hide_label_title">Ocultar notificaciones</string>
+  <string name="carrier_label_number_of_notification_icons_title">Máximo Numero de iconos antes de esconderse</string>
   <!-- Slim Shortcuts -->
   <string name="slim_shortcut_picker">Accesos directos Slim</string>
   <!-- Chamber of Secrets -->
   <string name="chamber_title">House of Lean</string>
+  <string name="chamber_toast">Lean está listo, sírveme una copa!!!</string>
   <!-- Advanced storage settings -->
+  <string name="storage_advanced_titlebar">Información avanazada de almacenamiento</string>
+  <string name="storage_menu_advanced">Avanzadas</string>
   <!-- USB data automatic unlock -->
+  <string name="usb_data_auto_unlock_title">Desbloquear datos USB</string>
+  <string name="usb_data_auto_unlock_summary">Permitir el acceso de datos al almacenamiento de su teléfono a través de USB (MTP, PTP)</string>
+  <string name="usb_data_auto_unlock_warning_summary">Su dispositivo establecerá conexiones sin protección, cada vez que se conecte a un PC. Asegurado lockscreens deshabilitar esta opción automatically.\n\nThis es todavía una característica experimental, uso con precaución.</string>
+  <!-- Tiles animation style  -->
+  <string name="qs_tile_animation_style_title">Estilo de animación de tiles</string>
+  <string name="qs_tile_animation_duration_title">Duración de la animación de tiles</string>
+  <string name="qs_tile_animation_style_off">sin animación</string>
+  <string name="qs_tile_animation_style_flip">voltear</string>
+  <string name="qs_tile_animation_style_rotate">rotar</string>
+  <string name="qs_tile_animation_duration_low">baja</string>
+  <string name="qs_tile_animation_duration_default">por defecto</string>
+  <string name="qs_tile_animation_duration_fast">rápido</string>
+  <string name="qs_set_animation_style">Animación se establece en %1$s</string>
+  <string name="qs_set_animation_duration">Duración de la animación se establece en %1$s</string>
 </resources>

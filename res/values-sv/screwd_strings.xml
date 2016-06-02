@@ -243,6 +243,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Ljusstyrkereglaget</string>
   <string name="qs_brightness_slider_summary">Visa ljusstyrkereglaget i panelen snabba inställningar</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Vibrera vid tryck</string>
   <string name="quick_settings_vibrate_summary">Vibrera vid tryck på brickor</string>
@@ -276,8 +277,6 @@
   <string name="summary_heads_up_enabled">Popup-meddelanden är aktiverade</string>
   <string name="summary_heads_up_disabled">Popup-meddelanden är inaktiverade</string>
   <!-- Time-context headers in notification header -->
-  <string name="status_bar_custom_header_default_title">Välj dina bilder</string>
-  <string name="custom_header_image_0">Standardinställning</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Låsskärmsbakgrund</string>
   <string name="lockscreen_wallpaper_title">Bakgrundsbild</string>
@@ -784,4 +783,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

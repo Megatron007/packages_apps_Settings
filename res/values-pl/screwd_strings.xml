@@ -268,6 +268,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">Suwak jasności</string>
   <string name="qs_brightness_slider_summary">Pokaż suwak jasności w panelu szybkich ustawienień</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Wibruj przy naciśnięciu</string>
   <string name="quick_settings_vibrate_summary">Wibracje podczas dotykania kafelków</string>
@@ -311,10 +312,6 @@
   <string name="contextual_title">Nagłówek panelu kontekstowych powiadomień</string>
   <string name="status_bar_custom_header_title">Niestandardowe tło panelu powiadomień</string>
   <string name="status_bar_custom_header_summary">Włącz tło nagłówka panelu powiadomień</string>
-  <string name="status_bar_custom_header_default_title">Wybierz swoje obrazy</string>
-  <string name="custom_header_image_0">Domyślny</string>
-  <string name="custom_header_image_1">Nowoczesne</string>
-  <string name="custom_header_image_2">Poly HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">Tapeta ekranu blokady</string>
   <string name="lockscreen_wallpaper_title">Tapeta</string>
@@ -1137,4 +1134,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

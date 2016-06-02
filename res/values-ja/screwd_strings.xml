@@ -215,6 +215,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">明るさ調整スライダー</string>
   <string name="qs_brightness_slider_summary">明るさ調整スライダーをクイック設定パネル内に表示</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">タッチ操作バイブ</string>
   <string name="quick_settings_vibrate_summary">タイルに触れたときに振動します。</string>
@@ -251,9 +252,6 @@
   <string name="heads_up_notifications">ヘッドアップ</string>
   <!-- Time-context headers in notification header -->
   <string name="status_bar_custom_header_summary">通知パネルのヘッダー画像を有効にします。</string>
-  <string name="custom_header_image_1">モダン</string>
-  <string name="custom_header_image_2">ポリHD</string>
-  <string name="custom_header_image_3">Screw\'d HD</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">ロック画面の壁紙</string>
   <string name="lockscreen_wallpaper_title">壁紙</string>
@@ -613,8 +611,6 @@
   <string name="smart_pulldown_all">キャンセルまたは維持は不可</string>
   <!-- Statusbar SCREW'D logo -->
   <string name="statusbar_logo_off">ロゴ無し</string>
-  <string name="statusbar_logo_static">非アニメーション</string>
-  <string name="statusbar_logo_animated">アニメーション</string>
   <!-- Flashlight notification -->
   <!--Secure lockscreen bouncer -->
   <string name="ls_bouncer_dismissable">キャンセル不可</string>
@@ -654,4 +650,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>

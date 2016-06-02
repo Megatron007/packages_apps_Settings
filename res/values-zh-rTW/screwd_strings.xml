@@ -251,6 +251,7 @@
   <!-- Quick Settings brightness slider -->
   <string name="qs_brightness_slider_title_eos">亮度控制</string>
   <string name="qs_brightness_slider_summary">在快速設定中顯示亮度控制</string>
+  <!-- Quick Settings brightness button -->
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">觸控時震動</string>
   <string name="quick_settings_vibrate_summary">觸控圖示時震動</string>
@@ -292,8 +293,6 @@
   <!-- Time-context headers in notification header -->
   <string name="status_bar_custom_header_title">自訂圖像</string>
   <string name="status_bar_custom_header_summary">啟用通知面板圖像</string>
-  <string name="status_bar_custom_header_default_title">選擇您的圖片</string>
-  <string name="custom_header_image_0">預設</string>
   <!-- Lock screen wallpaper -->
   <string name="lockscreen_settings_title">鎖屏畫面桌布</string>
   <string name="lockscreen_wallpaper_title">桌布</string>
@@ -863,4 +862,5 @@
   <!-- Chamber of Secrets -->
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
+  <!-- Tiles animation style  -->
 </resources>
