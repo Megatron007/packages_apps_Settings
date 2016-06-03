@@ -150,28 +150,7 @@
                 android:summary="@string/dashboard_switches_summary"
                 android:persistent="false" />
 
-
-    </PreferenceCategory>
-
-
-    <PreferenceCategory
-            android:key="screenshot"
-            android:title="@string/category_screenshot">
-
-        <SwitchPreference
-            android:key="screenshot_crop_and_share"
-            android:title="@string/screenshot_crop_and_share_enable_title"
-            android:summary="@string/screenshot_crop_and_share_enable_summary"
-            settings:keywords="@string/keywords_screenshot_crop_and_share"
-            android:defaultValue="true" />
-
-	 <SwitchPreference
-	    android:key="screenshot_crop_behavior"
-	    android:title="@string/pref_crop_behavior_title"
-	    android:summary="@string/pref_crop_behavior_summary"
-		    />
-
-   </PreferenceCategory>
+        </PreferenceCategory>
 
     <PreferenceCategory
       android:key="category_doze_options"
