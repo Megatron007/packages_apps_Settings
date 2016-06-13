@@ -31,8 +31,6 @@ import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
-import static android.provider.Settings.System.SCREENSHOT_CROP_AND_SHARE;
-import static android.provider.Settings.System.SCREENSHOT_CROP_BEHAVIOR;
 
 import android.app.Activity;
 import android.app.ActivityManagerNative;
@@ -76,7 +74,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
-    private static final String KEY_CATEGORY_SCREENSHOT = "screenshot";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
@@ -92,8 +89,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 	private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE
             = "camera_double_tap_power_gesture";
-    private static final String KEY_SCREENSHOT_CROP_AND_SHARE = "screenshot_crop_and_share";
-    private static final String KEY_SCREENSHOT_CROP_BEHAVIOR = "screenshot_crop_behavior";
 
     private static final String ROTATION_LOCKSCREEN = "Lockscreen";
     private static final String ROTATION_ANGLE_0 = "0";
@@ -127,8 +122,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private ListPreference mDashboardColumns;
 	private ListPreference mDashboardSwitches;
 
-    private SwitchPreference mScreenshotCropAndSharePreference;
-    private SwitchPreference mScreenshotCropBehaviorPreference;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -150,9 +143,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
-
-	PreferenceCategory screenshotPrefs = (PreferenceCategory)
-                findPreference(KEY_CATEGORY_SCREENSHOT);
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -205,22 +195,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             removePreference(KEY_DOZE);
         }
-
+		
 		mTapToWakePreference = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
         mTapToWakePreference.setOnPreferenceChangeListener(this);
-
+		
         if (!isTapToWakeAvailable(getResources())) {
             //disable the switch if the flag isn't true
-			mTapToWakePreference.setEnabled(false);
+			mTapToWakePreference.setEnabled(false); 
         }
 
         if (RotationPolicy.isRotationSupported(activity)) {
             mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 		}
-
+		
 		mCameraGesturePreference = (SwitchPreference) findPreference(KEY_CAMERA_GESTURE);
         mCameraGesturePreference.setOnPreferenceChangeListener(this);
-
+		
         if (!isCameraGestureAvailable(getResources())) {
 		    //disable the switch if the flag isn't true
 			mCameraGesturePreference.setEnabled(false);
@@ -250,24 +240,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             final int currentNightMode = uiManager.getNightMode();
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
-        }
-
-        mScreenshotCropAndSharePreference = (SwitchPreference) findPreference(KEY_SCREENSHOT_CROP_AND_SHARE);
-        if (mScreenshotCropAndSharePreference != null) {
-            mScreenshotCropAndSharePreference.setOnPreferenceChangeListener(this);
-        } else {
-            if (screenshotPrefs != null && mScreenshotCropAndSharePreference != null) {
-                screenshotPrefs.removePreference(mScreenshotCropAndSharePreference);
-            }
-        }
-
-	mScreenshotCropBehaviorPreference = (SwitchPreference) findPreference(KEY_SCREENSHOT_CROP_BEHAVIOR);
-        if (mScreenshotCropBehaviorPreference != null) {
-            mScreenshotCropBehaviorPreference.setOnPreferenceChangeListener(this);
-        } else {
-            if (screenshotPrefs != null && mScreenshotCropBehaviorPreference != null) {
-                screenshotPrefs.removePreference(mScreenshotCropBehaviorPreference);
-            }
         }
 
         mWakeWhenPluggedOrUnplugged =
@@ -529,17 +501,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mTapToWakePreference.setChecked(value != 0);
         }
 
-        // Update crop and share if it is available.
-        if (mScreenshotCropAndSharePreference != null) {
-            int value = Settings.System.getInt(getContentResolver(), SCREENSHOT_CROP_AND_SHARE, 1);
-            mScreenshotCropAndSharePreference.setChecked(value != 0);
-        }
-
- 	if (mScreenshotCropBehaviorPreference != null) {
-            int value = Settings.System.getInt(getContentResolver(), SCREENSHOT_CROP_BEHAVIOR, 1);
-            mScreenshotCropBehaviorPreference.setChecked(value != 0);
-        }
-
         // Update camera gesture #1 if it is available.
         if (mCameraGesturePreference != null) {
             int value = Settings.Secure.getInt(getContentResolver(), CAMERA_GESTURE_DISABLED, 0);
@@ -613,14 +574,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mTapToWakePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOUBLE_TAP_TO_WAKE, value ? 1 : 0);
-        }
-        if (preference == mScreenshotCropAndSharePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(getContentResolver(), SCREENSHOT_CROP_AND_SHARE, value ? 1 : 0);
-        }
-	if (preference == mScreenshotCropBehaviorPreference) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(getContentResolver(), SCREENSHOT_CROP_BEHAVIOR, value ? 1 : 0);
         }
         if (preference == mCameraGesturePreference) {
             boolean value = (Boolean) objValue;
