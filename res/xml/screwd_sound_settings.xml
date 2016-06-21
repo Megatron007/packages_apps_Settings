@@ -32,6 +32,28 @@
             settings:unitsRight=""
             android:persistent="false" />
 	
+	<ListPreference
+             android:key="volume_dialog_stroke"
+             android:title="@string/volume_dialog_stroke_title"
+             android:dialogTitle="@string/volume_dialog_stroke_title"
+             android:entries="@array/volume_dialog_stroke_entries"
+             android:entryValues="@array/volume_dialog_stroke_values"
+             android:defaultValue="1" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+             android:key="volume_dialog_stroke_color"
+             android:title="@string/volume_dialog_stroke_color_title"
+             android:defaultValue="0xffffffff" />
+
+        <com.android.settings.widget.SeekBarPreferenceCham
+             android:key="volume_dialog_stroke_thickness"
+             android:title="@string/volume_dialog_stroke_thickness_title"
+             android:max="25"
+             settings:min="1"
+             settings:unitsLeft=""
+             settings:unitsRight="px"
+             android:persistent="false" />
+
 	<com.android.settings.screwd.SystemSettingSwitchPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
