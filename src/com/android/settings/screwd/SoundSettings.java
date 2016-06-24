@@ -162,7 +162,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeDialogCornerRadius =
                  (SeekBarPreferenceCham) findPreference(PREF_VOLUME_DIALOG_CORNER_RADIUS);
         int volumeDialogCornerRadius = Settings.System.getInt(getContentResolver(),
-                Settings.System.VOLUME_DIALOG_CORNER_RADIUS, 2);
+                Settings.System.VOLUME_DIALOG_CORNER_RADIUS, 10);
         mVolumeDialogCornerRadius.setValue(volumeDialogCornerRadius / 1);
         mVolumeDialogCornerRadius.setOnPreferenceChangeListener(this);
 
