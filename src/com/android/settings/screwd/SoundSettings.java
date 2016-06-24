@@ -27,6 +27,7 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.os.SystemProperties;
 import android.os.Vibrator;
 import android.preference.ListPreference;
@@ -237,12 +238,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                         Settings.System.VOLUME_DIALOG_STROKE_THICKNESS, val * 1);
                 return true;
 			} else if (preference == mVolumeDialogCornerRadius) {
-                int val = (Integer) newValue;
+                int val = (Integer) objValue;
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.VOLUME_DIALOG_CORNER_RADIUS, val * 1);
                 return true;
             }
-        }
         return true;
     }
 

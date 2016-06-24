@@ -30,6 +30,7 @@ import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.widget.SeekBarPreferenceCham;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +63,7 @@ public class QsSettings extends SettingsPreferenceFragment implements
     private SeekBarPreferenceCham mQSStrokeThickness;
     private SeekBarPreferenceCham mQSCornerRadius;
 
-	static final int DEFAULT_QS_STROKE_COLOR = 0xFF80CBC4;
+	static final int DEFAULT_QS_STROKE_COLOR = 0xFF59007F;
 
     @Override
     public void onCreate(Bundle icicle) {
