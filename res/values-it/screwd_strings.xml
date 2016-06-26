@@ -1196,6 +1196,10 @@
   <string name="status_bar_screwd_logo_summary">Abilita per mostrare il logo screw\'d a sinistra della statusbar</string>
   <string name="status_bar_screwd_logo_color">Colore logo screw\'d</string>
   <string name="statusbar_logo_off">Disattivo</string>
+  <string name="statusbar_logo_static">Stile 1 - Non animato</string>
+  <string name="statusbar_logo_animated">Stile 1 - Animato</string>
+  <string name="statusbar_logo_static2">Stile 2 - Non animato</string>
+  <string name="statusbar_logo_animated2">Stile 2 - Animato</string>
   <!-- Flashlight notification -->
   <string name="flashlight_notification_title">Notifica torcia</string>
   <string name="flashlight_notification_summary">Mostra una notifica quando la torcia è accesa</string>
@@ -1463,14 +1467,44 @@
   <string name="usb_data_auto_unlock_summary">Consente l\'accesso sbloccato dei dati di archiviazione del telefono tramite USB (MTP, PTP)</string>
   <string name="usb_data_auto_unlock_warning_summary">Il dispositivo stabilirà connessioni non protette, ogni volta che si collega ad un PC. Le schermate di blocco sicure disabiliteranno questa opzione automaticamente.\n\nQuesta è una funzione ancora sperimentale, usare con cautela.</string>
   <!-- Tiles animation style  -->
+  <string name="quicksettings_tiles_category">Opzioni di animazione tile</string>
   <string name="qs_tile_animation_style_title">Stile animazione tile</string>
   <string name="qs_tile_animation_duration_title">Durata animazione tile</string>
-  <string name="qs_tile_animation_style_off">niente animazione</string>
-  <string name="qs_tile_animation_style_flip">capovolgi</string>
-  <string name="qs_tile_animation_style_rotate">ruota</string>
-  <string name="qs_tile_animation_duration_low">lenta</string>
-  <string name="qs_tile_animation_duration_default">predefinita</string>
-  <string name="qs_tile_animation_duration_fast">veloce</string>
-  <string name="qs_set_animation_style">L\'animazione è impostata su %1$s</string>
-  <string name="qs_set_animation_duration">La durata dell\'animazione è impostata su %1$s</string>
+  <string name="qs_tile_animation_interpolator_title">Interpolatore animazione tile</string>
+  <string name="qs_tile_animation_style_off">Niente animazione</string>
+  <string name="qs_tile_animation_style_flip">Capovolgi</string>
+  <string name="qs_tile_animation_style_rotate">Ruota</string>
+  <string name="qs_tile_animation_duration_low">Lento</string>
+  <string name="qs_tile_animation_duration_default">Predefinito</string>
+  <string name="qs_tile_animation_duration_fast">Veloce</string>
+  <string name="qs_tile_animation_interpolator_linearInterpolator">Lineare</string>
+  <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelera</string>
+  <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelera</string>
+  <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelera e decelera</string>
+  <string name="qs_tile_animation_interpolator_bounceInterpolator">Rimbalza</string>
+  <string name="qs_tile_animation_interpolator_overshootInterpolator">Supera</string>
+  <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipa</string>
+  <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipa e supera</string>
+  <string name="qs_set_animation_style">%1$s</string>
+  <string name="qs_set_animation_duration">%1$s</string>
+  <string name="qs_set_animation_interpolator">%1$s</string>
+  <string name="screenshot_crop_and_share_enable_title">Screenshot ritaglia &amp; condividi</string>
+  <string name="keywords_screenshot_crop_and_share">screenshot ritaglia condividi modifica</string>
+  <string name="screenshot_crop_and_share_enable_summary">Visualizza una finestra di editor dopo aver catturato uno screenshot per fare alcune operazioni come ritaglio, salvataggio o condivisione di esso</string>
+  <string name="category_screenshot">Screenshot</string>
+  <string name="pref_crop_behavior_title">Comportamento ritaglio</string>
+  <string name="pref_crop_behavior_summary">Utilizza sempre l\'immagine ritagliata all\'interno dell\'area di ritaglio, anche se non è stato premuto il pulsante applica</string>
+  <!-- Lock screen visualizer settings -->
+  <string name="show_title">Mostra</string>
+  <string name="visualizer_show_summary">Consente di mostrare il Visualizzatore di musica nella schermata di blocco</string>
+  <string name="visualizer_use_custom_color_title">Personalizza il colore</string>
+  <string name="visualizer_use_custom_color_summary">Consente di utilizzare un colore personalizzato, disabilita per creare automaticamente il colore di sfondo della schermata di blocco</string>
+  <!-- Lock screen (preference screen) -->
+  <string name="lock_screen_visualizer_settings_title">Visualizzatore di musica</string>
+  <string name="lock_screen_visualizer_settings_summary">Personalizza il Visualizzatore di musica</string>
+  <!-- Volume settings - Volume adjustment sound -->
+  <string name="volume_adjust_sounds_title">Suoni di regolazione volume</string>
+  <!-- MediaScanner behavior on boot -->
+  <!-- Volume dialog stroke settings -->
+  <!-- QS stroke settings -->
 </resources>
