@@ -1465,12 +1465,10 @@
   <!-- Tiles animation style  -->
   <string name="qs_tile_animation_style_title">Estilo de animación de tiles</string>
   <string name="qs_tile_animation_duration_title">Duración de la animación de tiles</string>
-  <string name="qs_tile_animation_style_off">sin animación</string>
-  <string name="qs_tile_animation_style_flip">voltear</string>
-  <string name="qs_tile_animation_style_rotate">rotar</string>
-  <string name="qs_tile_animation_duration_low">baja</string>
-  <string name="qs_tile_animation_duration_default">por defecto</string>
-  <string name="qs_tile_animation_duration_fast">rápido</string>
-  <string name="qs_set_animation_style">Animación se establece en %1$s</string>
-  <string name="qs_set_animation_duration">Duración de la animación se establece en %1$s</string>
+  <!-- Lock screen visualizer settings -->
+  <!-- Lock screen (preference screen) -->
+  <!-- Volume settings - Volume adjustment sound -->
+  <!-- MediaScanner behavior on boot -->
+  <!-- Volume dialog stroke settings -->
+  <!-- QS stroke settings -->
 </resources>

@@ -17,6 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Screw'd Settings -->
   <string name="header_customize">カスタマイズ</string>
+  <string name="header_category_screwd">Screw\'dの設定</string>
   <string name="ui">ユーザーインタフェース</string>
   <string name="system">システム</string>
   <string name="notifications">通知</string>
@@ -30,6 +31,7 @@
   <string name="sounds">サウンドとボリューム</string>
   <string name="kernel_tweaker">Kernel Adiutor</string>
   <string name="bitsyko_layers">Layers Manager</string>
+  <string name="viper_title">Viper4Android</string>
   <string name="themes_settings_title">テーマ</string>
   <!-- Screw'd Settings cats-->
   <string name="sound_buttons_cat">ボタン</string>
@@ -129,7 +131,9 @@
   <string name="pulse_speed_slow">遅く</string>
   <string name="pulse_speed_very_slow">とても遅く</string>
   <!-- Battery light settings -->
+  <string name="battery_light_title">バッテリーライト</string>
   <string name="battery_low_pulse_title">電池が少なくなったら点滅</string>
+  <string name="battery_light_list_title">カラー</string>
   <string name="battery_light_low_color_title">低残量時</string>
   <string name="battery_light_full_color_title">充電 (90%)</string>
   <string name="battery_light_really_full_color_title">充電 (100%)</string>
@@ -181,6 +185,8 @@
   <!-- Doze options -->
   <string name="display_category_doze_options_title">アンビエントディスプレイ</string>
   <string name="doze_settings_title">高度なDoze設定</string>
+  <string name="doze_trigger_notification_title">通知によるトリガー</string>
+  <string name="doze_trigger_notification_summary_off">通知はトリガーとして使われません</string>
   <!-- Recents panel -->
   <string name="recents_panel_category">履歴パネル</string>
   <string name="show_clear_all_recents_button_title">全履歴クリアボタン</string>
@@ -373,6 +379,8 @@
   <!-- Restart SystemUI -->
   <string name="restart_systemui">SystemUI を再起動します。</string>
   <!-- Slim DSLV -->
+  <string name="shortcut_action_reset">リセット</string>
+  <string name="shortcut_action_add">追加</string>
   <string name="shortcut_action_warning">警告</string>
   <string name="shortcut_action_help_shortcut">ショートカット</string>
   <string name="shortcut_action_help_button">ボタン</string>
@@ -392,6 +400,9 @@
   <string name="shortcuts_icon_picker_gplus">Google Plus</string>
   <string name="shortcuts_icon_picker_help">ヘルプ</string>
   <string name="shortcuts_icon_picker_joystick">ジョイスティック</string>
+  <string name="shortcuts_icon_picker_quicksettings">クイック設定</string>
+  <string name="shortcuts_icon_picker_rss">RSSフィード</string>
+  <string name="shortcuts_icon_picker_sdcard">SDカード</string>
   <!-- Button shorcut actions -->
   <string name="shortcut_action_camera">カメラ</string>
   <string name="shortcut_action_home">ホーム</string>
@@ -399,6 +410,9 @@
   <string name="shortcut_action_recent">最近使ったアプリ</string>
   <string name="shortcut_action_power">画面オフ</string>
   <string name="shortcut_action_camera">カメラ</string>
+  <string name="shortcut_action_torch">トーチ</string>
+  <string name="shortcut_action_reset">リセット</string>
+  <string name="shortcut_action_add">追加</string>
   <string name="shortcut_action_warning">警告</string>
   <string name="shortcut_action_help_shortcut">ショートカット</string>
   <string name="shortcut_action_help_button">ボタン</string>
@@ -407,6 +421,8 @@
   <string name="lockscreen_shortcuts_single_tap">クリック</string>
   <string name="lockscreen_shortcuts_double_tap">ダブルタップ</string>
   <!-- AOKP custom system animations -->
+  <string name="animation_title">アニメーション</string>
+  <string name="system_animation_title">システムのアニメーション</string>
   <!-- Toast Animation -->
   <string name="shortcut_picker_icon_type_system_title">システムアイコン</string>
   <string name="shortcut_picker_icon_type_custom_title">ギャラリー</string>
@@ -415,6 +431,7 @@
   <!-- ListView interpolator -->
   <!-- Disabling FC notifications -->
   <!-- Doze notification color invert -->
+  <string name="doze_notification_color_invert_title">色の反転</string>
   <!-- Breathing Notifications -->
   <!-- Toast Icons -->
   <string name="toast_icon_title">トーストアイコン</string>
@@ -524,7 +541,20 @@
   <!-- Break SystemUI Tuner into two parts -->
   <string name="status_bar_icon_blacklist_title">ステータスバーアイコン</string>
   <!-- Recent panel -->
+  <string name="use_slim_recents_title">SlimRomのアプリ履歴</string>
+  <string name="show_running_tasks_title">実行中のアプリのみを表示</string>
+  <string name="recents_max_apps_title">アプリ数の上限</string>
+  <string name="recent_panel_scale_title">サイズ</string>
+  <string name="recent_panel_expanded_mode_title">拡張モード</string>
+  <string name="recent_panel_expanded_mode_summary">最近のタスクのプレビュー表示を拡張</string>
+  <string name="recent_panel_show_topmost_title">最上位のタスクを表示</string>
+  <string name="recent_panel_show_topmost_summary">アプリ履歴で操作中のアプリを除外しない</string>
+  <string name="recent_panel_bg_color_title">パネルの背景色</string>
+  <string name="recent_card_bg_color_title">カードの背景色</string>
+  <string name="recent_card_text_color_title">カードのテキスト色</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
+  <string name="recent_panel_lefty_mode_title">左端に表示</string>
+  <string name="recent_panel_lefty_mode_summary">左端に最近使ったアプリのパネルを表示</string>
   <string name="recent_app_sidebar_title">アプリサイドバー</string>
   <string name="recent_app_sidebar_style_title">サイドバーのスタイル</string>
   <string name="recent_app_sidebar_hide_labels_title">アイコンラベル非表示</string>
@@ -537,6 +567,9 @@
   <string name="status_bar_clock">時計と日付</string>
   <string name="status_bar_clock_title">時計と日付のスタイル</string>
   <string name="clock_title_enable">行揃え</string>
+  <string name="clock_enabled">有効</string>
+  <string name="clock_disabled">無効</string>
+  <string name="clock_color_title">カラー</string>
   <string name="status_bar_show_clock_title">日付と時計を表示</string>
   <string name="status_bar_am_pm_info">24時間表示が有効です</string>
   <string name="clock_date_style">日付スタイル</string>
@@ -549,12 +582,24 @@
   <string name="am_pm_clock_none">表示しない</string>
   <string name="clock_date_display_none">表示しない</string>
   <!-- QS -->
+  <string name="qs_settings_title">QSタイル</string>
+  <string name="qs_category_title">クイック設定</string>
+  <string name="qs_order_title">タイルの選択と並べ替え</string>
+  <string name="add_qs">新しいタイルを追加</string>
+  <string name="hotspot">ホットスポット</string>
+  <string name="qs_action_delete">削除</string>
+  <string name="qs_action_add">追加</string>
+  <string name="qs_action_no_more_tiles">これ以上タイルはありません</string>
   <string name="qs_main_tiles_title">最初の行を拡大</string>
   <string name="qs_main_tiles_summary_on">最初の行に2つのメインタイルを置く</string>
   <string name="qs_four_columns_title">行ごとに4 つのタイルを表示</string>
   <string name="qs_advanced_location_title">詳細な所在地の設定</string>
   <string name="qs_advanced_location_summary">クイック設定上での詳細な位置情報の設定を有効にする</string>
   <string name="quick_settings_reset_message">クイック設定のタイルをリセットしますか?</string>
+  <string name="quick_settings_summary">クイック設定パネルのタイルを編集する</string>
+  <string name="qs_num_columns_title">行ごとのタイル数</string>
+  <string name="qs_num_columns_showing">1行あたり%1$s個のタイルを表示する</string>
+  <string name="qs_main_tiles_summary">最初の行に2つのメインタイルを置く</string>
   <!-- Color Picker -->
   <!-- Instant reboot -->
   <!--Fingerprint auth vibration -->
@@ -651,4 +696,10 @@
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
   <!-- Tiles animation style  -->
+  <!-- Lock screen visualizer settings -->
+  <!-- Lock screen (preference screen) -->
+  <!-- Volume settings - Volume adjustment sound -->
+  <!-- MediaScanner behavior on boot -->
+  <!-- Volume dialog stroke settings -->
+  <!-- QS stroke settings -->
 </resources>

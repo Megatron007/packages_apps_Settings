@@ -1371,4 +1371,10 @@
   <!-- Advanced storage settings -->
   <!-- USB data automatic unlock -->
   <!-- Tiles animation style  -->
+  <!-- Lock screen visualizer settings -->
+  <!-- Lock screen (preference screen) -->
+  <!-- Volume settings - Volume adjustment sound -->
+  <!-- MediaScanner behavior on boot -->
+  <!-- Volume dialog stroke settings -->
+  <!-- QS stroke settings -->
 </resources>
