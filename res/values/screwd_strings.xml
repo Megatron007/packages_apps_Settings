@@ -1709,5 +1709,8 @@
     <string name="qs_panel_logo_style1">Style 1</string>
     <string name="qs_panel_logo_style2">Style 2</string>
     <string name="qs_panel_logo_alpha_title">QS panel logo transparency</string>
+
+    <!-- Volume dialog timeout -->
+    <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
     
 </resources>
