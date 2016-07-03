@@ -34,6 +34,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.provider.Settings.System;
@@ -71,6 +72,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String PREF_VOLUME_DIALOG_STROKE_COLOR = "volume_dialog_stroke_color";
     private static final String PREF_VOLUME_DIALOG_STROKE_THICKNESS = "volume_dialog_stroke_thickness";
     private static final String PREF_VOLUME_DIALOG_CORNER_RADIUS = "volume_dialog_corner_radius";
+    private static final String KEY_VOLUME_DIALOG_TIMEOUT = "volume_dialog_timeout";
 
     private SwitchPreference mVolumeRockerWake;
 	private SwitchPreference mVolumeKeysControlMedia;
@@ -82,6 +84,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mVolumeDialogStrokeColor;
     private SeekBarPreferenceCham mVolumeDialogStrokeThickness;
     private SeekBarPreferenceCham mVolumeDialogCornerRadius;
+    private SlimSeekBarPreference mVolumeDialogTimeout;
 
 	static final int DEFAULT_VOLUME_DIALOG_STROKE_COLOR = 0xFF80CBC4;
 
@@ -169,12 +172,22 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
          VolumeDialogSettingsDisabler(volumeDialogStroke);
 
+         // Volume dialog timeout seekbar
+        mVolumeDialogTimeout = (SlimSeekBarPreference) findPreference(KEY_VOLUME_DIALOG_TIMEOUT);
+        mVolumeDialogTimeout.setDefault(3000);
+        mVolumeDialogTimeout.isMilliseconds(true);
+        mVolumeDialogTimeout.setInterval(1);
+        mVolumeDialogTimeout.minimumValue(100);
+        mVolumeDialogTimeout.multiplyValue(100);
+        mVolumeDialogTimeout.setOnPreferenceChangeListener(this);
+
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        updateState();
     }
 
     @Override
@@ -242,7 +255,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.VOLUME_DIALOG_CORNER_RADIUS, val * 1);
                 return true;
-            }
+             } else if (preference == mVolumeDialogTimeout) {
+                 int volumeDialogTimeout = Integer.valueOf((String) objValue);
+                 Settings.System.putInt(getContentResolver(),
+                          Settings.System.VOLUME_DIALOG_TIMEOUT, volumeDialogTimeout);
+             }
         return true;
     }
 
@@ -257,6 +274,17 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 mVolumeDialogStrokeColor.setEnabled(true);
                 mVolumeDialogStrokeThickness.setEnabled(true);
             }
+    }
+
+    private void updateState() {
+        final Activity activity = getActivity();
+
+        if (mVolumeDialogTimeout != null) {
+            final int volumeDialogTimeout = Settings.System.getInt(getContentResolver(),
+                    Settings.System.VOLUME_DIALOG_TIMEOUT, 3000);
+            // minimum 100 is 1 interval of the 100 multiplier
+            mVolumeDialogTimeout.setInitValue((volumeDialogTimeout / 100) - 1);
+        }
     }
 
 	private void showDialogInner(int id) {

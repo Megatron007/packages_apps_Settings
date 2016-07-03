@@ -23,6 +23,11 @@
         android:key="sound_button_cat"
         android:title="@string/sound_buttons_cat" >
 
+        <SlimSeekBarPreference
+            android:key="volume_dialog_timeout"
+            android:title="@string/volume_dialog_timeout_title" />
+
+
     	<com.android.settings.widget.SeekBarPreferenceCham
             android:key="transparent_volume_dialog"
             android:title="@string/volume_dialog_transparency"
