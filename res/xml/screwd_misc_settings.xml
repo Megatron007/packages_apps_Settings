@@ -48,7 +48,7 @@
 		
     </PreferenceScreen>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
             android:key="screenshot"
             android:title="@string/category_screenshot">
 
@@ -64,6 +64,6 @@
 	    android:summary="@string/pref_crop_behavior_summary"
 	    android:defaultValue="false" />
 
-   </PreferenceCategory>
+   </PreferenceCategory>-->
 
 </PreferenceScreen>
