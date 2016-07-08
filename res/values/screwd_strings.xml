@@ -1611,12 +1611,12 @@
     <string name="qs_corner_radius_title">QS shade corner radius</string>
 
     <!-- Qs Panel Logo -->
-    <string name="qs_panel_logo_category">QS panel logo</string>
+    <string name="qs_panel_logo_category">QS Panel logo</string>
     <string name="qs_panel_logo_title">QS panel Screw\'d logo</string>
-    <string name="qs_panel_logo_disabled">Disabled</string>
-    <string name="qs_panel_logo_accent">Accent color</string>
-    <string name="qs_panel_logo_custom">Custom color</string>
-    <string name="qs_panel_logo_color_title">QS panel logo color</string>
+    <string name="qs_panel_logo_summary">Show a Screw\'d logo in the QS Panel behind the tiles</string>
+    <string name="qs_panel_logo_style_title">QS Panel Logo Style</string>
+    <string name="qs_panel_logo_style1">Style 1</string>
+    <string name="qs_panel_logo_style2">Style 2</string>
     <string name="qs_panel_logo_alpha_title">QS panel logo transparency</string>
     
 </resources>
