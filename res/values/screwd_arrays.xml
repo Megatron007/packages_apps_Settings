@@ -1325,16 +1325,14 @@
         <item>2</item>
     </string-array>
 
-    <!-- QS panel logo -->
-     <string-array name="qs_panel_logo_entries" translatable="false">
-         <item>@string/qs_panel_logo_disabled</item>
-         <item>@string/qs_panel_logo_accent</item>
-         <item>@string/qs_panel_logo_custom</item>
+    <!-- QS panel logo styles -->
+     <string-array name="qs_panel_logo_style_entries" translatable="false">
+         <item>@string/qs_panel_logo_style1</item>
+         <item>@string/qs_panel_logo_style2</item>
      </string-array>
  
-     <string-array name="qs_panel_logo_values" translatable="false">
+     <string-array name="qs_panel_logo_style_values" translatable="false">
          <item>0</item>
          <item>1</item>
-         <item>2</item>
      </string-array>
 </resources>
