@@ -1690,5 +1690,8 @@
     <!-- Navigation bar button color -->
     <string name="navbar_button_tint_title">Navigation button tint</string>
     <string name="navbar_button_tint_switch_title">Navigation button tinting</string>
+
+    <!-- Navbar buttons transparency -->
+    <string name="navbar_buttons_alpha_title">Buttons transparency</string>
     
 </resources>
