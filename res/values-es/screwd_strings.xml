@@ -114,6 +114,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Memoria</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Despertar con botones de volúmen</string>
   <string name="volume_rocker_wake_summary">Despertar dispositivo presionando las teclas de volumen</string>
@@ -1317,63 +1318,18 @@
   <string name="fling_longpress_summary">Aumentar o disminuir el tiempo que toma realizar una pulsación larga</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Acerca de pulso</string>
-  <string name="pulse_help_policy_notice_summary">Pulso es una genial barra de ecualización de audio en la barra de navegación cuando la musica se reproduce. Pulso no funciona con algunos reproductores de audio cuando se escucha en el altavoz del dispositivo. dar a play/pause después de redimensionar para que cumpla efecto.</string>
   <string name="pulse_settings">Pulsación</string>
-  <string name="pulse_settings_summary">Visualización de barra de audio en barra de navegación</string>
   <string name="fling_show_pulse_title">Ver pulso</string>
-  <string name="fling_show_pulse_summary">Visualización de audio en la barra de navegación</string>
   <string name="fling_pulse_color">Color de pulso</string>
   <string name="eos_fling_lavalamp_title">Encienda la lámpara de Lava</string>
   <string name="eos_fling_lavalamp_summary">Pulso anima una mezcla de color de estilo de lámpara de lava lisa</string>
   <string name="pulse_custom_dimen">Ancho de barra de pulso</string>
-  <string name="pulse_dimen0">Por defecto</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Espaciamiento de barra de pulso</string>
   <string name="default_div">Por defecto</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp(por defecto)</string>
   <string name="pulse_bar_style">Estilo de barra de pulso</string>
   <string name="default_pulse_empty">1dp(por defecto)</string>
   <string name="pulse_filled_block_size">Tamaño del bloque</string>
   <string name="pulse_empty_block_size">Espaciado del bloque</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0 (sin espacio)</string>
-  <string name="factor0">Normal</string>
-  <string name="factor1">Relajado</string>
-  <string name="factor2">Lento</string>
-  <string name="factor3">Rápido</string>
-  <string name="factor4">Loco</string>
   <string name="pulse_custom_fudge_factor">Nivel de cordura de visualizador</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Tamaño de la barra</string>
@@ -1471,4 +1427,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

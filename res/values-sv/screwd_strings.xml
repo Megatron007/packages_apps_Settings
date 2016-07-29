@@ -107,6 +107,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Minne</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Väck med volymknapparna</string>
   <string name="volume_rocker_wake_summary">Väck enheten med volymknapparna</string>
@@ -790,4 +791,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

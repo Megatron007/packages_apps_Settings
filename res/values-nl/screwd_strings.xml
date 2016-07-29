@@ -112,6 +112,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Geheugen</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Volumetoets haalt het toestel uit slaapstand</string>
   <string name="volume_rocker_wake_summary">Op de volumetoetsen drukken zal uw apparaat wakker maken</string>
@@ -1299,9 +1300,7 @@
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Over Pulse</string>
   <string name="pulse_settings">Pulse</string>
-  <string name="pulse_settings_summary">Navigatiebalk audio-visualisatie</string>
   <string name="fling_show_pulse_title">Toon Pulse</string>
-  <string name="fling_show_pulse_summary">Audio-visualisatie op de navigatiebalk</string>
   <string name="fling_pulse_color">Pulse kleur</string>
   <string name="eos_fling_lavalamp_title">Lavalamp inschakelen</string>
   <string name="eos_fling_lavalamp_summary">Pulse toont een vloeiende lavalamp stijl kleurenmix</string>
@@ -1352,4 +1351,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

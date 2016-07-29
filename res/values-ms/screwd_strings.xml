@@ -107,6 +107,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Memori</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Kelantangan jumpelang bangun</string>
   <string name="volume_rocker_wake_summary">Menekan kekunci kelantangan akan bangun peranti anda</string>
@@ -509,4 +510,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

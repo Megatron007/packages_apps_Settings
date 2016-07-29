@@ -111,6 +111,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Pamięć</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Wybudzanie przyciskami głośności</string>
   <string name="volume_rocker_wake_summary">Naciskając klawisze głośności wybudzisz urządzenie</string>
@@ -1141,4 +1142,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

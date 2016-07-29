@@ -44,7 +44,7 @@
         android:entryValues="@array/smartbar_button_animation_values"
         android:summary="@string/smartbar_button_animation_summary" />
 
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+    <com.android.settings.screwd.SystemSettingSwitchPreference
         android:key="navbar_tint_switch"
         android:title="@string/navbar_button_tint_switch_title"
         android:defaultValue="false" />

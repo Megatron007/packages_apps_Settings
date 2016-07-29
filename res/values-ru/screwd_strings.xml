@@ -103,6 +103,7 @@
   <string name="chipset_info">Чипсет</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Память</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Пробуждать кнопками громкости</string>
   <string name="volume_rocker_wake_summary">Пробуждать устройство клавишами громкости</string>
@@ -394,4 +395,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

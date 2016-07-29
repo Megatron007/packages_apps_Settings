@@ -94,6 +94,7 @@
   <string name="chipset_info">チップセット</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">メモリ</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">音量キーで画面オン</string>
   <string name="volume_rocker_wake_summary">音量キーを押すと画面がオンになります</string>
@@ -377,7 +378,6 @@
   <string name="battery_bar_thickness_title">バッテリーバーの厚さ</string>
   <string name="battery_bar_animate_title">充電中のアニメーション</string>
   <!-- Restart SystemUI -->
-  <string name="restart_systemui">SystemUI を再起動します。</string>
   <!-- Slim DSLV -->
   <string name="shortcut_action_reset">リセット</string>
   <string name="shortcut_action_add">追加</string>
@@ -702,4 +702,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

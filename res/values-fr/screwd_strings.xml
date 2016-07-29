@@ -114,6 +114,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Mémoire</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Réveiller par les boutons de volume</string>
   <string name="volume_rocker_wake_summary">Appuyer sur les boutons de volume réveillera l\'appareil</string>
@@ -1315,63 +1316,18 @@
   <string name="fling_longpress_summary">Augmenter ou diminuer délai d\'appui prolongé</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">À propos Pulse</string>
-  <string name="pulse_help_policy_notice_summary">Pulse est une barre de visualisation au style d\'un égaliseur audio qui s\'affiche sur la barre de navigation lors de l\'écoute de musique. Pulse ne fonctionne pas avec certaines sources audio lors de l\'écoute de musique sur le(s) haut-parleur(s) de l\'appareil.Soyez certains d\'appuyer sur Play/Pause encore une fois après avoir réinitialisé les dimensions de Pulse.</string>
   <string name="pulse_settings">Pulse</string>
-  <string name="pulse_settings_summary">Égaliseur audio sur la barre de navigation</string>
   <string name="fling_show_pulse_title">Pulse</string>
-  <string name="fling_show_pulse_summary">Visualisation au style d\'un égaliseur audio la barre de navigation</string>
   <string name="fling_pulse_color">Couleur de Pulse</string>
   <string name="eos_fling_lavalamp_title">Activer la lampe Lava</string>
   <string name="eos_fling_lavalamp_summary">Pulse anime la lampe Lava</string>
   <string name="pulse_custom_dimen">Largeur de Pulse</string>
-  <string name="pulse_dimen0">Par défaut</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Espacement de Pulse</string>
   <string name="default_div">Par défaut</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp(par défaut)</string>
   <string name="pulse_bar_style">Style de Pulse</string>
   <string name="default_pulse_empty">1dp(par défaut)</string>
   <string name="pulse_filled_block_size">Taille des blocs</string>
   <string name="pulse_empty_block_size">Espacement des blocs</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0(aucun espacement)</string>
-  <string name="factor0">Normal</string>
-  <string name="factor1">Relaxant</string>
-  <string name="factor2">Lent</string>
-  <string name="factor3">Hyper</string>
-  <string name="factor4">Démentiel</string>
   <string name="pulse_custom_fudge_factor">Niveau du visualizer</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Dimensions</string>
@@ -1436,4 +1392,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

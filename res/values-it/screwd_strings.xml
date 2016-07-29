@@ -114,6 +114,7 @@
   <string name="chipset_info">Chipset</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">Memoria</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">Accendi il display con Vol +/-</string>
   <string name="volume_rocker_wake_summary">Premendo il bilanciere del volume si accenderà lo schermo</string>
@@ -1321,63 +1322,20 @@
   <string name="fling_longpress_summary">Aumenta o diminuisci il tempo impiegato per eseguire una lunga pressione</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Che cos\'è Pulse</string>
-  <string name="pulse_help_policy_notice_summary">Pulse è un brillante equalizzatore che visualizza fasci colorati sulla barra di navigazione quando ascolti musica. Pulse potrebbe non funzionare con alcuni lettori multimediali. Assicurarsi di utilizzare Play/Pausa di nuovo dopo aver modificato le dimensioni Pulse.</string>
+  <string name="pulse_help_policy_notice_summary">Pulse è un brillante equalizzatore che visualizza fasci colorati sulla barra di navigazione quando ascolti musica. Pulse potrebbe non funzionare con alcuni lettori multimediali</string>
   <string name="pulse_settings">Pulse</string>
-  <string name="pulse_settings_summary">Visualizzazione audio su barra di navigazione</string>
   <string name="fling_show_pulse_title">Visualizza Pulse</string>
-  <string name="fling_show_pulse_summary">Visualizzazione audio sulla barra di navigazione</string>
   <string name="fling_pulse_color">Colore pulse</string>
   <string name="eos_fling_lavalamp_title">Attiva colori misti</string>
   <string name="eos_fling_lavalamp_summary">Pulse viene animata con fasci di colore misto</string>
+  <string name="pulse_advanced_category">Avanzato</string>
   <string name="pulse_custom_dimen">Larghezza Barra Pulse</string>
-  <string name="pulse_dimen0">Predefinita</string>
-  <string name="pulse_dimen1">7dp</string>
-  <string name="pulse_dimen2">8dp</string>
-  <string name="pulse_dimen3">9dp</string>
-  <string name="pulse_dimen4">10dp</string>
-  <string name="pulse_dimen5">11dp</string>
-  <string name="pulse_dimen6">12dp</string>
-  <string name="pulse_dimen7">13dp</string>
-  <string name="pulse_dimen8">15dp</string>
-  <string name="pulse_dimen9">16dp</string>
-  <string name="pulse_dimen10">17dp</string>
-  <string name="pulse_dimen11">18dp</string>
-  <string name="pulse_dimen12">19dp</string>
-  <string name="pulse_dimen13">20dp</string>
-  <string name="pulse_dimen14">21dp</string>
-  <string name="pulse_dimen15">22dp</string>
-  <string name="pulse_dimen16">23dp</string>
-  <string name="pulse_dimen17">24dp</string>
-  <string name="pulse_dimen18">25dp</string>
-  <string name="pulse_dimen19">26dp</string>
   <string name="pulse_custom_div">Spaziatura Barra Pulse</string>
   <string name="default_div">Predefinita</string>
-  <string name="div1">18</string>
-  <string name="div2">20</string>
-  <string name="div3">22</string>
-  <string name="div4">24</string>
-  <string name="div5">26</string>
-  <string name="div6">28</string>
-  <string name="div7">30</string>
-  <string name="div8">32</string>
-  <string name="default_fill">4dp (predefinito)</string>
   <string name="pulse_bar_style">Stile Barra Pulse</string>
   <string name="default_pulse_empty">1dp(predefinito)</string>
   <string name="pulse_filled_block_size">Dimensione blocco</string>
   <string name="pulse_empty_block_size">Spaziatura blocco</string>
-  <string name="pulse_fill1">5dp</string>
-  <string name="pulse_fill2">6dp</string>
-  <string name="pulse_fill3">7dp</string>
-  <string name="pulse_fill4">8dp</string>
-  <string name="pulse_empty1">2dp</string>
-  <string name="pulse_empty2">3dp</string>
-  <string name="pulse_empty3">4dp</string>
-  <string name="pulse_empty4">0 (nessuna spaziatura)</string>
-  <string name="factor0">Normale</string>
-  <string name="factor1">Rilassato</string>
-  <string name="factor2">Lento</string>
-  <string name="factor3">Veloce</string>
-  <string name="factor4">Velocissimo</string>
   <string name="pulse_custom_fudge_factor">Velocità Barra Pulse</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Dimensione barra</string>
@@ -1405,6 +1363,15 @@
   <string name="smartbar_ime_action_none">Nessuna</string>
   <string name="smartbar_ime_action_arrows">Tasti direzionali</string>
   <string name="smartbar_ime_action_switcher">Switcher tastiera</string>
+  <string name="smartbar_backup_current_config_title">Salva profilo</string>
+  <string name="smartbar_restore_config_title">Ripristina il profilo</string>
+  <string name="smartbar_config_name_edit_dialog_title">Nome del profilo SmartBar</string>
+  <string name="smartbar_config_name_edit_dialog_message">Immetti nome oppure lascia vuoto</string>
+  <string name="smartbar_config_dialog_title">Profili SmartBar</string>
+  <string name="smartbar_config_backup_success_toast">Profilo SmartBar salvato correttamente</string>
+  <string name="smartbar_config_restore_success_toast">Profilo SmartBar ripristinato correttamente</string>
+  <string name="smartbar_config_backup_error_toast">Errore salvataggio profilo Smartbar</string>
+  <string name="smartbar_config_restore_error_toast">Errore ripristino profilo Smartbar</string>
   <!-- Heads Up button -->
   <string name="enable_headsup_button_extended_statusbar_title">Pulsante statusbar espansa</string>
   <string name="enable_headsup_button_extended_statusbar_summary">Attiva/Disattiva azione per il pulsante heads up nella statusbar espansa</string>
@@ -1505,6 +1472,22 @@
   <!-- Volume settings - Volume adjustment sound -->
   <string name="volume_adjust_sounds_title">Suoni di regolazione volume</string>
   <!-- MediaScanner behavior on boot -->
+  <string name="media_scanner_on_boot_title">Comportamento scansione multimediale all\'avvio</string>
+  <string name="media_scanner_on_boot_enabled">Scansione multimediale</string>
+  <string name="media_scanner_on_boot_ask">Chiedi per scansione (notifica)</string>
+  <string name="media_scanner_on_boot_disabled">Non eseguire scansione multimediale</string>
   <!-- Volume dialog stroke settings -->
+  <string name="volume_dialog_stroke_disabled">Disabilitato</string>
+  <string name="volume_dialog_stroke_accent">Colore accent</string>
+  <string name="volume_dialog_stroke_custom">Colore personalizzato</string>
   <!-- QS stroke settings -->
+  <string name="qs_stroke_disabled">Disabilitato</string>
+  <string name="qs_stroke_accent">Colore accent</string>
+  <string name="qs_stroke_custom">Colore personalizzato</string>
+  <!-- Qs Panel Logo -->
+  <string name="qs_panel_logo_style1">Stile 1</string>
+  <string name="qs_panel_logo_style2">Stile 2</string>
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>

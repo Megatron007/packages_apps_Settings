@@ -106,6 +106,7 @@
   <string name="chipset_info">晶片組</string>
   <!-- About phone screen, Free memory info -->
   <string name="mem_info">記憶體</string>
+  <!-- Vendor version -->
   <!-- Volume rocker wake -->
   <string name="volume_rocker_wake_title">音量鍵喚醒</string>
   <string name="volume_rocker_wake_summary">按下音量鍵以喚醒裝置</string>
@@ -869,4 +870,8 @@
   <!-- MediaScanner behavior on boot -->
   <!-- Volume dialog stroke settings -->
   <!-- QS stroke settings -->
+  <!-- Qs Panel Logo -->
+  <!-- Volume dialog timeout -->
+  <!-- Volume Dialog Expanded -->
+  <!-- Navigation bar button color -->
 </resources>
