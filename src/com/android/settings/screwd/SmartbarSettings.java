@@ -60,7 +60,7 @@ import com.android.internal.utils.du.Config.ButtonConfig;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.screwd.widget.SeekBarPreferenceCham;
+import com.android.settings.widget.SeekBarPreferenceCham;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class SmartbarSettings extends SettingsPreferenceFragment implements

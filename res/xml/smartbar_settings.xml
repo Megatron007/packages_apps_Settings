@@ -55,7 +55,7 @@
         android:defaultValue="0xffffffff"
         android:dependency="navbar_tint_switch"/>
 
-     <com.android.settings.screwd.widget.SeekBarPreferenceCham
+     <com.android.settings.widget.SeekBarPreferenceCham
         android:key="navbar_buttons_alpha"
         android:title="@string/navbar_buttons_alpha_title"
         android:max="255"
