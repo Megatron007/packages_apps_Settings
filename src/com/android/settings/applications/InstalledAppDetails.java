@@ -794,10 +794,10 @@ public class InstalledAppDetails extends AppInfoBase
         // Set application name.
         TextView labelView = (TextView) appSnippet.findViewById(android.R.id.title);
         labelView.setText(label);
-        
+
 	    // Set application package name.
         TextView packageNameView = (TextView) appSnippet.findViewById(R.id.pkgname);
-        
+
         if (!TextUtils.isEmpty(packageName)) {
             packageNameView.setSelected(true);
             packageNameView.setVisibility(View.VISIBLE);
@@ -805,7 +805,7 @@ public class InstalledAppDetails extends AppInfoBase
         } else {
             packageNameView.setVisibility(View.INVISIBLE);
         }
-        
+
         // Version number of application
         TextView appVersion = (TextView) appSnippet.findViewById(R.id.widget_text1);
 
@@ -853,7 +853,13 @@ public class InstalledAppDetails extends AppInfoBase
         if (!appRow.peekable) {
             notifSummary.add(context.getString(R.string.notifications_no_peeking));
         }
+        if (!appRow.halo) {
+            notifSummary.add(context.getString(R.string.filter_notif_no_halo));
+        }
         switch (notifSummary.size()) {
+            case 4:
+                return context.getString(R.string.notifications_four_items,
+                        notifSummary.get(0), notifSummary.get(1), notifSummary.get(2), notifSummary.get(3));
             case 3:
                 return context.getString(R.string.notifications_three_items,
                         notifSummary.get(0), notifSummary.get(1), notifSummary.get(2));

@@ -61,7 +61,12 @@
 	
 	</PreferenceCategory>
 	
-	<!-- Pulse notification light -->
+	<PreferenceScreen
+	    android:key="halo_settings"
+            android:title="@string/halo_settings_title"
+            android:fragment="com.android.settings.paranoid.Halo" />
+
+        <!-- Pulse notification light -->
         <PreferenceScreen
             android:key="notification_light"
             android:title="@string/notification_light_title"
