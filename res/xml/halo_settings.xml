@@ -36,7 +36,7 @@ limitations under the License.
         android:key="halo_color"
         android:title="@string/halo_color_title"
         android:summary="@string/halo_color_summary"
-        android:defaultValue="#ffbbbbbb"
+        android:defaultValue="0xffbbbbbb"
         android:dependency="halo_enable" />
 
     <com.android.settings.screwd.SecureSettingSwitchPreference
