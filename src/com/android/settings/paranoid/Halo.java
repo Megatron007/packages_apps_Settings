@@ -21,7 +21,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
@@ -35,21 +35,13 @@ import com.android.settings.SettingsPreferenceFragment;
 public class Halo extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_SIZE = "halo_size";
-    private static final String KEY_HALO_PAUSE = "halo_pause";
-    private static final String KEY_HALO_MSGBOX = "halo_msgbox";
     private static final String KEY_HALO_MSGBOX_ANIMATION = "halo_msgbox_animation";
     private static final String KEY_HALO_NOTIFY_COUNT = "halo_notify_count";
-    private static final String KEY_HALO_UNLOCK_PING = "halo_unlock_ping";
 
     private ListPreference mHaloSize;
-    private CheckBoxPreference mHaloHide;
-    private CheckBoxPreference mHaloPause;
     private ListPreference mHaloNotifyCount;
     private ListPreference mHaloMsgAnimate;
-    private CheckBoxPreference mHaloMsgBox;
-    private CheckBoxPreference mHaloUnlockPing;
 
     private Context mContext;
 
@@ -66,15 +58,6 @@ public class Halo extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         mContext = getActivity();
 
-        mHaloHide = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_HIDE);
-        mHaloHide.setChecked(Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.HALO_HIDE, 0) == 1);
-
-        int isLowRAM = (!ActivityManager.isLowRamDeviceStatic()) ? 0 : 1;
-        mHaloPause = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_PAUSE);
-        mHaloPause.setChecked(Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.HALO_PAUSE, isLowRAM) == 1);
-
         mHaloSize = (ListPreference) prefSet.findPreference(KEY_HALO_SIZE);
         try {
             float haloSize = Settings.Secure.getFloat(mContext.getContentResolver(),
@@ -84,14 +67,6 @@ public class Halo extends SettingsPreferenceFragment
             // So what
         }
         mHaloSize.setOnPreferenceChangeListener(this);
-
-        mHaloMsgBox = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_MSGBOX);
-        mHaloMsgBox.setChecked(Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.HALO_MSGBOX, 1) == 1);
-
-        mHaloUnlockPing = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_UNLOCK_PING);
-        mHaloUnlockPing.setChecked(Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.HALO_UNLOCK_PING, 0) == 1);
 
         mHaloNotifyCount = (ListPreference) prefSet.findPreference(KEY_HALO_NOTIFY_COUNT);
         try {
@@ -114,27 +89,6 @@ public class Halo extends SettingsPreferenceFragment
         mHaloMsgAnimate.setOnPreferenceChangeListener(this);
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mHaloHide) {
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.HALO_HIDE, mHaloHide.isChecked()
-                    ? 1 : 0);
-        } else if (preference == mHaloPause) {
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.HALO_PAUSE, mHaloPause.isChecked()
-                    ? 1 : 0);
-        } else if (preference == mHaloMsgBox) {
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.HALO_MSGBOX, mHaloMsgBox.isChecked()
-                    ? 1 : 0);
-        } else if (preference == mHaloUnlockPing) {
-            Settings.Secure.putInt(mContext.getContentResolver(),
-                    Settings.Secure.HALO_UNLOCK_PING, mHaloUnlockPing.isChecked()
-                    ? 1 : 0);
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHaloSize) {
