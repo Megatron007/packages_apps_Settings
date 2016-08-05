@@ -76,6 +76,7 @@ import com.android.settings.screwd.HeadsUpSettings;
 import com.android.settings.screwd.Navbar;
 import com.android.settings.screwd.SmartbarSettings;
 import com.android.settings.paranoid.PieControl;
+import com.android.settings.paranoid.Halo;
 import com.android.settings.screwd.FloatingWindows;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
@@ -289,6 +290,7 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
 	    R.id.screwd_settings,
+	        R.id.screwd_halo,
             R.id.dashboard
     };
 
@@ -375,7 +377,8 @@ public class SettingsActivity extends Activity
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName(),
 	    FloatingWindows.class.getName(),
-            HeadsUpSettings.class.getName()
+            HeadsUpSettings.class.getName(),
+	    Halo.class.getName()
     };
 
 
