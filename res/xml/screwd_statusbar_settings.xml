@@ -43,6 +43,12 @@
            android:title="@string/double_tap_to_sleep_title"
            android:summary="@string/double_tap_to_sleep_summary"
            android:defaultValue="true" />
+
+        <com.android.settings.screwd.SystemSettingSwitchPreference
+    	   android:key="bluetooth_show_battery"
+           android:title="@string/bluetooth_battery_title"
+           android:summary="@string/bluetooth_battery_summary"
+           android:defaultValue="false" />
     
     	<PreferenceScreen
            android:key="network_traffic"
