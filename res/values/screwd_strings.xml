@@ -1734,6 +1734,7 @@
 
     <string name="halo_floating_notifications_title">Use Floating Mode</string>
     <string name="halo_floating_notifications_summary">Always launch activities from notifications in Float Mode.</string>
+    <string name="halo_enable_float_summary">Enable floating mode first.</string>
 
     <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_halo_label_black">Blacklist from HALO</string>
