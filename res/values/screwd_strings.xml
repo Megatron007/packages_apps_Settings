@@ -15,7 +15,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-
+    <string name="customization">Customization</string>
+    <string name="screwd_settings">Screw\'d Settings</string>
     
     <!-- About phone screen, Screw'd version name-->
     <string name="mod_version">Screw\'d version</string>
