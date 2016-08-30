@@ -123,8 +123,16 @@
 
         <activity android:name=".Settings$WirelessSettings"
             android:label="@string/header_category_wireless_networks">
-            <intent-filter android:priority="4">
+            <intent-filter android:priority="5">
                 <action android:name="com.android.settings.category.wireless" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Settings$ScrewdSettings"
+            android:label="@string/customization">
+            <intent-filter android:priority="4">
+                <action android:name="com.android.settings.category.screwd" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -171,6 +179,23 @@
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <!-- ScrewdSettings activity. -->
+        <activity android:name="Settings$ScrewdSettingsActivity"
+                android:label="@string/screwd_settings"
+                android:icon="@drawable/ic_screwdsettings"
+                android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="3">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.screwd" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.screwdaosp.screwshop.ScrewdShop" />
         </activity>
 
         <!-- Wireless Controls -->
@@ -2382,6 +2407,7 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+        
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">

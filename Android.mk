@@ -8,6 +8,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-recyclerview \
     android-support-v7-preference \
     android-support-v7-appcompat \
+    android-support-v7-cardview \
+    android-support-design \
     android-support-v14-preference \
     jsr305
 
@@ -17,11 +19,20 @@ LOCAL_SRC_FILES := \
         $(call all-java-files-under, src) \
         src/com/android/settings/EventLogTags.logtags
 
+LOCAL_SRC_FILES += $(call all-java-files-under, ../ScrewShop/src)
+
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/v7/preference/res \
     frameworks/support/v14/preference/res \
     frameworks/support/v7/appcompat/res \
+    frameworks/support/v7/cardview/res \
+    frameworks/support/design/res \
     frameworks/support/v7/recyclerview/res
+
+LOCAL_RESOURCE_DIR += packages/apps/ScrewShop/res
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+	--extra-packages com.screwdaosp.screwshop
 
 LOCAL_PACKAGE_NAME := Settings
 LOCAL_CERTIFICATE := platform
@@ -30,7 +41,7 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages android.support.v7.preference:android.support.v14.preference:android.support.v17.preference:android.support.v7.appcompat:android.support.v7.recyclerview
+    --extra-packages android.support.v7.preference:android.support.v14.preference:android.support.v17.preference:android.support.v7.appcompat:android.support.v7.recyclerview:android.support.design:android.support.v7.cardview
 
 ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_PROGUARD_ENABLED := disabled

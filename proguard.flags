@@ -19,6 +19,8 @@
 -keep class com.android.settings.notification.*
 -keep class com.android.settings.accessibility.*FragmentForSetupWizard
 -keep class com.android.settings.display.*FragmentForSetupWizard
+-keep class com.screwdaosp.screwshop.**
+-keep class com.screwdaosp.screwshop.tabs.**
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
