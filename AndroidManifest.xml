@@ -197,12 +197,13 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.screwdaosp.screwshop.Launcher" />
         </activity>
+
         <activity
              android:name="com.screwdaosp.screwshop.ScrewdShop"
              android:theme="@style/AppTheme" />
         <activity
-             android:name="com.screwdaosp.screwshop.tabs.UI"
-             android:theme="@style/screwd_sett" />
+             android:name="com.screwdaosp.screwshop.frags.PowerMenuActions" />
+
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"
