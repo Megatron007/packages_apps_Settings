@@ -19,8 +19,8 @@
 -keep class com.android.settings.notification.*
 -keep class com.android.settings.accessibility.*FragmentForSetupWizard
 -keep class com.android.settings.display.*FragmentForSetupWizard
--keep class com.screwdaosp.screwshop.**
--keep class com.screwdaosp.screwshop.frags.**
+-keep class com.mrapocalypse.screwdshop.**
+-keep class com.mrapocalypse.screwdshop.frags.**
 -keep class android.support.design.widget.** { *; }
 -keep interface android.support.design.widget.** { *; }
 

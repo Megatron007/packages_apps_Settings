@@ -128,7 +128,7 @@ import com.android.settingslib.drawer.DashboardCategory;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
-import com.screwdaosp.screwshop.Launcher;
+import com.mrapocalypse.screwdshop.ScrewdShop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -347,7 +347,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             TestingSettings.class.getName(),
             WifiAPITest.class.getName(),
             WifiInfo.class.getName(),
-            Launcher.class.getName(),
+            ScrewdShop.class.getName(),
     };
 
 
@@ -545,7 +545,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
         mIsShowingDashboard = className.equals(Settings.class.getName())
                 || className.equals(Settings.WirelessSettings.class.getName())
-                || className.equals(Launcher.class.getName())
                 || className.equals(Settings.DeviceSettings.class.getName())
                 || className.equals(Settings.PersonalSettings.class.getName())
                 || className.equals(Settings.WirelessSettings.class.getName());

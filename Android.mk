@@ -32,7 +32,7 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
 LOCAL_RESOURCE_DIR += packages/apps/ScrewShop/res
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
-	--extra-packages com.screwdaosp.screwshop
+	--extra-packages com.mrapocalypse.screwdshop
 
 LOCAL_PACKAGE_NAME := Settings
 LOCAL_CERTIFICATE := platform

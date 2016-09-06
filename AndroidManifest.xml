@@ -180,29 +180,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!-- ScrewdSettings activity. -->
-        <activity android:name="Settings$ScrewdSettingsActivity"
-                android:label="@string/screwd_settings"
-                android:icon="@drawable/ic_screwdsettings"
-                android:taskAffinity="">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-            <intent-filter android:priority="3">
-                <action android:name="com.android.settings.action.SETTINGS" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.screwd" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.screwdaosp.screwshop.Launcher" />
-        </activity>
-
-        <activity
-             android:name="com.screwdaosp.screwshop.ScrewdShop"
-             android:theme="@style/AppTheme" />
-        <activity
-             android:name="com.screwdaosp.screwshop.frags.PowerMenuActions" />
 
         <!-- Wireless Controls -->
 
@@ -954,6 +931,31 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.notification.ZenModeExternalRuleSettings" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
+        <activity android:name="Settings$ScrewdSettingsActivity"
+            android:label="@string/screwd_settings"
+            android:icon="@drawable/ic_screwdsettings"
+            android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="mrapocalypse.screwdshop.ScrewdShop" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="9">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.screwd" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.mrapocalypse.screwdshop.ScrewdShop" />
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
         </activity>
