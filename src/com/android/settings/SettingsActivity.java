@@ -132,6 +132,10 @@ import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
 import com.mrapocalypse.screwdshop.ScrewdShop;
+import com.mrapocalypse.screwdshop.frags.FlingSettings;
+import com.mrapocalypse.screwdshop.frags.NavbarSettings;
+import com.mrapocalypse.screwdshop.frags.SmartbarSettings;
+import com.mrapocalypse.screwdshop.frags.PulseSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -356,6 +360,10 @@ public class SettingsActivity extends SettingsDrawerActivity
             SubstratumLaunch.class.getName(),
             ScrewdShop.class.getName(),
             AmbientSettings.class.getName(),
+            NavbarSettings.class.getName(),
+            FlingSettings.class.getName(),
+            SmartbarSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
 
