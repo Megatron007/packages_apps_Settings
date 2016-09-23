@@ -937,7 +937,7 @@
 
         <activity android:name="Settings$ScrewdSettingsActivity"
             android:label="@string/screwd_settings"
-            android:icon="@drawable/ic_screwdsettings"
+            android:icon="@drawable/ic_screwd_settings"
             android:taskAffinity="">
             <intent-filter android:priority="1">
                 <action android:name="mrapocalypse.screwdshop.ScrewdShop" />
