@@ -961,8 +961,6 @@
         </activity>
 
         <activity android:name="com.mrapocalypse.screwdshop.frags.recentshidden.HAFRAppListActivity" />
-        <activity android:name="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereBuilderActivity" />
-        <activity android:name="com.mrapocalypse.screwdshop.frags.gesture.GestureAnywhereCreateGestureActivity" />
 
         <activity android:name="Settings$DisplaySettingsActivity"
                 android:label="@string/display_settings"
