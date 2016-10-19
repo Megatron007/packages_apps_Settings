@@ -208,4 +208,8 @@
    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
+   <!-- [CHAR LIMIT=100] Notification Importance slider: very low importance level description -->
+   <string name="notification_importance_very_low">No full screen interruption, peeking, sound, or vibration. Show at the bottom of the notification list. Hide from lock screen.</string>
+
+
 </resources>
