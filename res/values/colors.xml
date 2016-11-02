@@ -106,6 +106,8 @@
 
     <color name="importance_icon_tint">#8a000000</color>
     <color name="importance_disabled_tint">#4d000000</color>
+	
+	<color name="external_icon_tint">@android:color/material_deep_teal_500</color>
 
     <!-- Accessibility SUW colors -->
     <color name="material_blue_500">#4285F4</color>
